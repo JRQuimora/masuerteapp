@@ -196,7 +196,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 20),
                               child: Text(
-                                '3D Maps lets you discover insights you might not see in traditional two-dimensional (2D) tables and charts. With 3D Maps, you can plot geographic and temporal data on a 3D globe or custom map, show it over time, and create visual tours you can share with other people.',
+                                'Masuerte 4JC Tiangge is located at Club Manila East Compound Brgy. San Juan Taytay, Rizal and was founded in 2019. Masuerte 4JC Tiangge is open every Monday, Thursday, and Saturday.',
                                 style: GoogleFonts.montserrat(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
@@ -235,7 +235,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                             Padding(
                               padding: const EdgeInsets.symmetric(vertical: 20),
                               child: Text(
-                                'The objective of the project is to develop a 3D Map Application for Masuerte 4JC Tiangge. Develop a hassle-free 3D Map Application for the user. Provide an application that will allow the users to virtually see the stalls color and stalls number.',
+                                'The goal of the Masuerte 4JC Tiangge 3D Map Application is to allow users to virtually view stall colors and numbers. This will allow users to discover their selected stalls more easily and navigate their destination. Masuerte 4JC Tiangge’s goal is to enhance their stalls through the use of Social Media Platform specifically Facebook. On Facebook, consumers will see the most recent styles and trends.',
                                 style: GoogleFonts.montserrat(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,

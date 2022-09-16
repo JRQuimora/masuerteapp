@@ -46,7 +46,6 @@ class _SplashScreenState extends State<SplashScreen> {
     return MaterialApp(
       title: 'Masuerte App | Home',
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
@@ -55,7 +54,6 @@ class _SplashScreenState extends State<SplashScreen> {
               image: AssetImage("assets/splashscreen/image.jpg"),
               fit: BoxFit.fitHeight,
               alignment: Alignment.bottomLeft,
-              opacity: 0.2,
             ),
             color: Colors.white,
           ),
@@ -63,10 +61,11 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Text(
               "Masuerte\n3D Map App",
               textAlign: TextAlign.center,
-              style: GoogleFonts.poppins(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
+              style: GoogleFonts.lora(
+                fontSize: 30,
+                fontWeight: FontWeight.w600,
                 height: 1.2,
+                color: Colors.white,
               ),
             ),
           ),

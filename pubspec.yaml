@@ -40,6 +40,7 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   touchable: ^1.0.2
   avatar_glow: ^2.0.2
+  url_launcher: ^6.1.5
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +88,38 @@ flutter:
     - assets/Green/12.webp
     - assets/Green/13.webp
     - assets/Green/14.webp
+
+    - assets/Green/1.webp
+    - assets/Green/2.webp
+    - assets/Green/3.webp
+    - assets/Green/4.webp
+    - assets/Green/5.webp
+    - assets/Green/6.webp
+    - assets/Green/7.webp
+    - assets/Green/8.webp
+    - assets/Green/9.webp
+    - assets/Green/10.webp
+    - assets/Green/11.webp
+    - assets/Green/12.webp
+    - assets/Green/13.webp
+    - assets/Green/14.webp
+
+
+    - assets/New Green/1.webp
+    - assets/New Green/2.webp
+    - assets/New Green/3.webp
+    - assets/New Green/4.webp
+    - assets/New Green/5.webp
+    - assets/New Green/6.webp
+    - assets/New Green/7.webp
+    - assets/New Green/8.webp
+    - assets/New Green/9.webp
+    - assets/New Green/10.webp
+    - assets/New Green/11.webp
+    - assets/New Green/12.webp
+    - assets/New Green/13.webp
+    - assets/New Green/14.webp
+    - assets/New Green/16.webp
 
     - assets/Yellow/1.webp
     - assets/Yellow/2.webp

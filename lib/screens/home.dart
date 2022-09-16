@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const ViewMapScreen()),
+                                            const ContactScreen()),
                                   );
                                 },
                                 child: Container(
@@ -161,10 +161,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Column(
                                       children: [
                                         Container(
-                                          width: 70,
-                                          height: 70,
                                           margin:
                                               const EdgeInsets.only(bottom: 15),
+                                          width: 70,
+                                          height: 70,
                                           decoration: const BoxDecoration(
                                             color: Color.fromARGB(
                                                 255, 111, 255, 106),
@@ -175,13 +175,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           child: const Align(
                                             alignment: Alignment.center,
                                             child: FaIcon(
-                                              FontAwesomeIcons.mapLocationDot,
+                                              FontAwesomeIcons.squarePhoneFlip,
                                               size: 30,
                                             ),
                                           ),
                                         ),
                                         Text(
-                                          'VIEW\nMAP',
+                                          'CONTACT\nUS',
                                           textAlign: TextAlign.center,
                                           style: GoogleFonts.montserrat(
                                               fontWeight: FontWeight.bold,
@@ -192,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           padding:
                                               const EdgeInsets.only(top: 10),
                                           child: Text(
-                                            'Here you can see the floor plan as well as the 3D view of it.',
+                                            'Here you can view on how to contact us.',
                                             textAlign: TextAlign.center,
                                             style: GoogleFonts.montserrat(
                                               fontWeight: FontWeight.w500,
@@ -209,93 +209,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
-                          Expanded(
-                            flex: 5,
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const AboutUsScreen()),
-                                  );
-                                },
-                                child: Container(
-                                  height: 250,
-                                  decoration: BoxDecoration(
-                                    color:
-                                        const Color.fromARGB(255, 26, 26, 26),
-                                    borderRadius: const BorderRadius.all(
-                                      Radius.circular(15),
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black.withOpacity(0.3),
-                                        spreadRadius: 1,
-                                        blurRadius: 10,
-                                        offset: const Offset(0, 0),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(20),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          width: 70,
-                                          height: 70,
-                                          margin:
-                                              const EdgeInsets.only(bottom: 15),
-                                          decoration: const BoxDecoration(
-                                            color: Color.fromARGB(
-                                                255, 111, 255, 106),
-                                            borderRadius: BorderRadius.all(
-                                              Radius.circular(35),
-                                            ),
-                                          ),
-                                          child: const Align(
-                                            alignment: Alignment.center,
-                                            child: FaIcon(
-                                              FontAwesomeIcons.solidBuilding,
-                                              size: 30,
-                                            ),
-                                          ),
-                                        ),
-                                        Text(
-                                          'ABOUT\nUS',
-                                          textAlign: TextAlign.center,
-                                          style: GoogleFonts.montserrat(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 17,
-                                              color: Colors.white),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 10),
-                                          child: Text(
-                                            'Here you can view information about us and our goal.',
-                                            textAlign: TextAlign.center,
-                                            style: GoogleFonts.montserrat(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 12,
-                                              color: const Color.fromARGB(
-                                                  255, 162, 162, 162),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
                           Expanded(
                             flex: 5,
                             child: Padding(
@@ -379,6 +292,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
+                        ],
+                      ),
+                      Row(
+                        children: [
                           Expanded(
                             flex: 5,
                             child: Padding(
@@ -389,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const ContactScreen()),
+                                            const AboutUsScreen()),
                                   );
                                 },
                                 child: Container(
@@ -414,10 +331,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Column(
                                       children: [
                                         Container(
-                                          margin:
-                                              const EdgeInsets.only(bottom: 15),
                                           width: 70,
                                           height: 70,
+                                          margin:
+                                              const EdgeInsets.only(bottom: 15),
                                           decoration: const BoxDecoration(
                                             color: Color.fromARGB(
                                                 255, 111, 255, 106),
@@ -428,13 +345,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           child: const Align(
                                             alignment: Alignment.center,
                                             child: FaIcon(
-                                              FontAwesomeIcons.squarePhoneFlip,
+                                              FontAwesomeIcons.solidBuilding,
                                               size: 30,
                                             ),
                                           ),
                                         ),
                                         Text(
-                                          'CONTACT\nUS',
+                                          'ABOUT\nUS',
                                           textAlign: TextAlign.center,
                                           style: GoogleFonts.montserrat(
                                               fontWeight: FontWeight.bold,
@@ -445,7 +362,90 @@ class _HomeScreenState extends State<HomeScreen> {
                                           padding:
                                               const EdgeInsets.only(top: 10),
                                           child: Text(
-                                            'Here you can view on how to contact us.',
+                                            'Here you can view information about us and our goal.',
+                                            textAlign: TextAlign.center,
+                                            style: GoogleFonts.montserrat(
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 12,
+                                              color: const Color.fromARGB(
+                                                  255, 162, 162, 162),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 5,
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ViewMapScreen()),
+                                  );
+                                },
+                                child: Container(
+                                  height: 250,
+                                  decoration: BoxDecoration(
+                                    color:
+                                        const Color.fromARGB(255, 26, 26, 26),
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(15),
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.3),
+                                        spreadRadius: 1,
+                                        blurRadius: 10,
+                                        offset: const Offset(0, 0),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          width: 70,
+                                          height: 70,
+                                          margin:
+                                              const EdgeInsets.only(bottom: 15),
+                                          decoration: const BoxDecoration(
+                                            color: Color.fromARGB(
+                                                255, 111, 255, 106),
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(35),
+                                            ),
+                                          ),
+                                          child: const Align(
+                                            alignment: Alignment.center,
+                                            child: FaIcon(
+                                              FontAwesomeIcons.mapLocationDot,
+                                              size: 30,
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          'VIEW\nMAP',
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.montserrat(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17,
+                                              color: Colors.white),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 10),
+                                          child: Text(
+                                            'Here you can see the floor plan as well as the 3D view of it.',
                                             textAlign: TextAlign.center,
                                             style: GoogleFonts.montserrat(
                                               fontWeight: FontWeight.w500,

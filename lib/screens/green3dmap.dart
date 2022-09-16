@@ -13,8 +13,11 @@ class GreenThreeDMap extends StatefulWidget {
 }
 
 class _GreenThreeDMapState extends State<GreenThreeDMap> {
-  String assetPath = "assets/Green/1.webp";
-  String stallNo = "Stall 1-7, 34-38";
+  double _lon = 0;
+  double _lat = 0;
+
+  String assetPath = "assets/New Green/1.webp";
+  String stallNo = "Stall 1";
   List<Hotspot> hotspot1 = [];
   List<Hotspot> hotspot2 = [];
   List<Hotspot> hotspot3 = [];
@@ -29,6 +32,7 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
   List<Hotspot> hotspot12 = [];
   List<Hotspot> hotspot13 = [];
   List<Hotspot> hotspot14 = [];
+  List<Hotspot> hotspot15 = [];
 
   int hotspotId = 1;
 
@@ -39,13 +43,20 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
     });
   }
 
+  dynamic onViewChanged(longitude, latitude, tilt) {
+    setState(() {
+      _lon = longitude;
+      _lat = latitude;
+    });
+  }
+
   @override
   void initState() {
     resetCache();
     hotspot1 = [
       Hotspot(
-        latitude: 0,
-        longitude: -20,
+        latitude: 10,
+        longitude: 50,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -54,9 +65,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/2.webp";
+                assetPath = "assets/New Green/2.webp";
                 hotspotId = 2;
-                stallNo = "Stall 24-33";
+                stallNo = "Stall 2";
               });
             },
             icon: const Icon(
@@ -72,7 +83,7 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
     hotspot2 = [
       Hotspot(
         latitude: 10,
-        longitude: -50,
+        longitude: 75,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -81,33 +92,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/3.webp";
+                assetPath = "assets/New Green/3.webp";
                 hotspotId = 3;
-                stallNo = "Stall 12-15,8-11";
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 0,
-        longitude: 5,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Green/5.webp";
-                hotspotId = 5;
-                stallNo = "Stall 35-40";
+                stallNo = "Stall 3";
               });
             },
             icon: const Icon(
@@ -122,8 +109,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot3 = [
       Hotspot(
-        latitude: 0,
-        longitude: 10,
+        latitude: 10,
+        longitude: -170.50,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -132,9 +119,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/2.webp";
-                hotspotId = 2;
-                stallNo = "Stall 24-33";
+                assetPath = "assets/New Green/4.webp";
+                hotspotId = 4;
+                stallNo = "Stall 4";
               });
             },
             icon: const Icon(
@@ -146,8 +133,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -40,
+        latitude: 9.50,
+        longitude: -93.30,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -156,9 +143,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/4.webp";
-                hotspotId = 4;
-                stallNo = "Stall 16-18,19-23";
+                assetPath = "assets/New Green/9.webp";
+                hotspotId = 6;
+                stallNo = "Stall 6";
               });
             },
             icon: const Icon(
@@ -173,8 +160,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot4 = [
       Hotspot(
-        latitude: 0,
-        longitude: 30,
+        latitude: 6.6,
+        longitude: -162,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -183,9 +170,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/3.webp";
+                assetPath = "assets/New Green/3.webp";
                 hotspotId = 3;
-                stallNo = "Stall 12-15,8-11";
+                stallNo = "Stall 3";
               });
             },
             icon: const Icon(
@@ -197,8 +184,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -20,
+        latitude: 10,
+        longitude: 105,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -207,9 +194,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/5.webp";
+                assetPath = "assets/New Green/8.webp";
                 hotspotId = 5;
-                stallNo = "Stall 35-40";
+                stallNo = "Stall 5";
               });
             },
             icon: const Icon(
@@ -224,8 +211,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot5 = [
       Hotspot(
-        latitude: 0,
-        longitude: 50,
+        latitude: 10,
+        longitude: -90.50,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -234,33 +221,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/6.webp";
-                hotspotId = 6;
-                stallNo = "Stall 48-54";
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 0,
-        longitude: 0,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Green/4.webp";
+                assetPath = "assets/New Green/4.webp";
                 hotspotId = 4;
-                stallNo = "Stall 16-18,19-23";
+                stallNo = "Stall 4";
               });
             },
             icon: const Icon(
@@ -272,8 +235,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -70,
+        latitude: 5,
+        longitude: 167,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -282,8 +245,33 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/2.webp";
-                hotspotId = 2;
+                assetPath = "assets/New Green/9.webp";
+                hotspotId = 6;
+                stallNo = "Stall 6";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+      Hotspot(
+        latitude: 5,
+        longitude: 81,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/14.webp";
+                hotspotId = 8;
+                stallNo = "Stall 8";
               });
             },
             icon: const Icon(
@@ -298,8 +286,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot6 = [
       Hotspot(
-        latitude: 0,
-        longitude: 45,
+        latitude: 5.5,
+        longitude: -108,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -308,9 +296,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/7.webp";
-                hotspotId = 7;
-                stallNo = "Stall 66-72";
+                assetPath = "assets/New Green/3.webp";
+                hotspotId = 3;
+                stallNo = "Stall 3";
               });
             },
             icon: const Icon(
@@ -322,8 +310,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -90,
+        latitude: 5,
+        longitude: 9,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -332,9 +320,33 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/5.webp";
+                assetPath = "assets/New Green/8.webp";
                 hotspotId = 5;
-                stallNo = "Stall 35-40";
+                stallNo = "Stall 5";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+      Hotspot(
+        latitude: 9,
+        longitude: 93,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/10.webp";
+                hotspotId = 7;
+                stallNo = "Stall 7";
               });
             },
             icon: const Icon(
@@ -349,8 +361,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot7 = [
       Hotspot(
-        latitude: 0,
-        longitude: 45,
+        latitude: 5,
+        longitude: -38,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -359,9 +371,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/8.webp";
-                hotspotId = 8;
-                stallNo = "Stall 99-103";
+                assetPath = "assets/New Green/9.webp";
+                hotspotId = 6;
+                stallNo = "Stall 6";
               });
             },
             icon: const Icon(
@@ -373,8 +385,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -65,
+        latitude: 5,
+        longitude: 75,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -383,9 +395,33 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/6.webp";
-                hotspotId = 6;
-                stallNo = "Stall 48-54";
+                assetPath = "assets/New Green/14.webp";
+                hotspotId = 8;
+                stallNo = "Stall 8";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+      Hotspot(
+        latitude: 5,
+        longitude: 152,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/11.webp";
+                hotspotId = 9;
+                stallNo = "Stall 9";
               });
             },
             icon: const Icon(
@@ -400,8 +436,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot8 = [
       Hotspot(
-        latitude: 0,
-        longitude: 45,
+        latitude: 5,
+        longitude: 110,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -410,9 +446,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/11.webp";
-                hotspotId = 11;
-                stallNo = "Stall 91-95";
+                assetPath = "assets/New Green/8.webp";
+                hotspotId = 5;
+                stallNo = "Stall 5";
               });
             },
             icon: const Icon(
@@ -424,7 +460,7 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
+        latitude: 5,
         longitude: -10,
         width: 60.0,
         height: 60.0,
@@ -434,33 +470,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/9.webp";
-                hotspotId = 9;
-                stallNo = "Stall 71-78";
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 0,
-        longitude: -65,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Green/7.webp";
+                assetPath = "assets/New Green/10.webp";
                 hotspotId = 7;
-                stallNo = "Stall 66-72";
+                stallNo = "Stall 7";
               });
             },
             icon: const Icon(
@@ -475,8 +487,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot9 = [
       Hotspot(
-        latitude: 0,
-        longitude: -30,
+        latitude: 5,
+        longitude: -105,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -485,9 +497,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/8.webp";
-                hotspotId = 8;
-                stallNo = "Stall 99-103";
+                assetPath = "assets/New Green/10.webp";
+                hotspotId = 7;
+                stallNo = "Stall 7";
               });
             },
             icon: const Icon(
@@ -499,8 +511,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -80,
+        latitude: 5,
+        longitude: 85,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -509,9 +521,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/10.webp";
+                assetPath = "assets/New Green/12.webp";
                 hotspotId = 10;
-                stallNo = "Stall 63-70";
+                stallNo = "Stall 10";
               });
             },
             icon: const Icon(
@@ -526,8 +538,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot10 = [
       Hotspot(
-        latitude: 0,
-        longitude: 60,
+        latitude: 5,
+        longitude: -120,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -536,9 +548,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/9.webp";
+                assetPath = "assets/New Green/11.webp";
                 hotspotId = 9;
-                stallNo = "Stall 71-78";
+                stallNo = "Stall 9";
               });
             },
             icon: const Icon(
@@ -550,8 +562,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: 23,
+        latitude: 5,
+        longitude: -17,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -560,9 +572,33 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/11.webp";
+                assetPath = "assets/New Green/13.webp";
                 hotspotId = 11;
-                stallNo = "Stall 91-95";
+                stallNo = "Stall 11";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+      Hotspot(
+        latitude: 5,
+        longitude: 85,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/6.webp";
+                hotspotId = 13;
+                stallNo = "Stall 13";
               });
             },
             icon: const Icon(
@@ -577,31 +613,7 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot11 = [
       Hotspot(
-        latitude: 0,
-        longitude: 40,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Green/12.webp";
-                hotspotId = 12;
-                stallNo = "Stall 97-95";
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 0,
+        latitude: 5,
         longitude: -20,
         width: 60.0,
         height: 60.0,
@@ -611,9 +623,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/10.webp";
+                assetPath = "assets/New Green/12.webp";
                 hotspotId = 10;
-                stallNo = "Stall 63-70";
+                stallNo = "Stall 10";
               });
             },
             icon: const Icon(
@@ -625,8 +637,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -90,
+        latitude: 5,
+        longitude: -110.5,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -635,9 +647,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/8.webp";
-                hotspotId = 8;
-                stallNo = "Stall 99-103";
+                assetPath = "assets/New Green/5.webp";
+                hotspotId = 12;
+                stallNo = "Stall 12";
               });
             },
             icon: const Icon(
@@ -652,8 +664,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot12 = [
       Hotspot(
-        latitude: 10,
-        longitude: -30,
+        latitude: 5,
+        longitude: 35,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -662,9 +674,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/14.webp";
-                hotspotId = 14;
-                stallNo = "Stall 87-94";
+                assetPath = "assets/New Green/13.webp";
+                hotspotId = 11;
+                stallNo = "Stall 11";
               });
             },
             icon: const Icon(
@@ -676,8 +688,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -90,
+        latitude: 5,
+        longitude: -58,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -686,9 +698,108 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/11.webp";
-                hotspotId = 11;
-                stallNo = "Stall 91-95";
+                assetPath = "assets/New Green/6.webp";
+                hotspotId = 13;
+                stallNo = "Stall 13";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+      Hotspot(
+        latitude: 5,
+        longitude: -145,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/16.webp";
+                hotspotId = 15;
+                stallNo = "Stall 15";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+    ];
+
+    hotspot13 = [
+      Hotspot(
+        latitude: 5,
+        longitude: -115,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/12.webp";
+                hotspotId = 10;
+                stallNo = "Stall 10";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+      Hotspot(
+        latitude: 5,
+        longitude: -18,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/5.webp";
+                hotspotId = 12;
+                stallNo = "Stall 12";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+      Hotspot(
+        latitude: 5,
+        longitude: 75,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/7.webp";
+                hotspotId = 14;
+                stallNo = "Stall 14";
               });
             },
             icon: const Icon(
@@ -703,8 +814,8 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
 
     hotspot14 = [
       Hotspot(
-        latitude: 0,
-        longitude: -65,
+        latitude: 5,
+        longitude: -114,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -713,9 +824,83 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Green/12.webp";
+                assetPath = "assets/New Green/6.webp";
+                hotspotId = 13;
+                stallNo = "Stall 13";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+      Hotspot(
+        latitude: 5,
+        longitude: -18,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/16.webp";
+                hotspotId = 15;
+                stallNo = "Stall 15";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+    ];
+    hotspot15 = [
+      Hotspot(
+        latitude: 5,
+        longitude: 170,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/5.webp";
                 hotspotId = 12;
-                stallNo = "Stall 97-95";
+                stallNo = "Stall 12";
+              });
+            },
+            icon: const Icon(
+              FontAwesomeIcons.solidCircle,
+              color: Colors.white,
+              size: 30,
+            ),
+          ),
+        ),
+      ),
+      Hotspot(
+        latitude: 5,
+        longitude: 72,
+        width: 60.0,
+        height: 60.0,
+        widget: AvatarGlow(
+          endRadius: 100.0,
+          duration: const Duration(milliseconds: 1000),
+          child: IconButton(
+            onPressed: () {
+              setState(() {
+                assetPath = "assets/New Green/7.webp";
+                hotspotId = 14;
+                stallNo = "Stall 14";
               });
             },
             icon: const Icon(
@@ -743,12 +928,15 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: Panorama(
+                  onViewChanged: onViewChanged,
                   sensitivity: 2.0,
                   minLatitude: 5,
                   maxLatitude: 10,
-                  minLongitude: -85,
-                  maxLongitude: 50,
-                  croppedArea: const Rect.fromLTWH(0.2, 0.2, 0.5, 0.5),
+                  minLongitude: -180,
+                  maxLongitude: 180,
+                  longitude: 1,
+                  latitude: 10,
+                  croppedArea: const Rect.fromLTWH(0.2, 0.2, 1, 0.5),
                   hotspots: hotspotId == 1
                       ? hotspot1
                       : hotspotId == 2
@@ -776,7 +964,10 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
                                                                   : hotspotId ==
                                                                           13
                                                                       ? hotspot13
-                                                                      : hotspot14,
+                                                                      : hotspotId ==
+                                                                              14
+                                                                          ? hotspot14
+                                                                          : hotspot15,
                   child: Image.asset(assetPath),
                 ),
               ),
@@ -872,6 +1063,29 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
                             ),
                           ),
                         ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: Row(
+                        children: [
+                          Text(
+                            "lon: " + _lon.toString(),
+                            style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Text(
+                      "lat: " + _lat.toString(),
+                      style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
                       ),
                     ),
                   ],

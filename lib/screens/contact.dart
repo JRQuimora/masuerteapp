@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({Key? key}) : super(key: key);
@@ -14,6 +15,13 @@ class MyBehavior extends ScrollBehavior {
   Widget buildOverscrollIndicator(
       BuildContext context, Widget child, ScrollableDetails details) {
     return child;
+  }
+}
+
+Future<void> _launchUrl() async {
+  if (!await launchUrl(Uri.parse(
+      'https://www.facebook.com/groups/1322793074514263/?ref=share'))) {
+    throw 'Could not launch https://www.facebook.com/groups/1322793074514263/?ref=share';
   }
 }
 
@@ -161,54 +169,61 @@ class _ContactScreenState extends State<ContactScreen> {
                               ),
                             ],
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 30),
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: 70,
-                                  height: 70,
-                                  decoration: const BoxDecoration(
-                                    color: Color.fromARGB(255, 106, 185, 255),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(35),
+                          child: GestureDetector(
+                            onTap: _launchUrl,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 30),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 70,
+                                    height: 70,
+                                    decoration: const BoxDecoration(
+                                      color: Color.fromARGB(255, 106, 185, 255),
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(35),
+                                      ),
+                                    ),
+                                    child: const Align(
+                                      alignment: Alignment.center,
+                                      child: FaIcon(
+                                        FontAwesomeIcons.facebookSquare,
+                                        size: 35,
+                                      ),
                                     ),
                                   ),
-                                  child: const Align(
-                                    alignment: Alignment.center,
-                                    child: FaIcon(
-                                      FontAwesomeIcons.mobileRetro,
-                                      size: 35,
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: SizedBox(
+                                      width: MediaQuery.of(context).size.width -
+                                          200,
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'https://www.facebook.com/groups/1322793074514263/?ref=share',
+                                            style: GoogleFonts.montserrat(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Text(
+                                            'FB Page',
+                                            style: GoogleFonts.montserrat(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                              color: const Color.fromARGB(
+                                                  255, 87, 87, 87),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        '+639517269318',
-                                        style: GoogleFonts.montserrat(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Phone',
-                                        style: GoogleFonts.montserrat(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold,
-                                          color: const Color.fromARGB(
-                                              255, 87, 87, 87),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -245,74 +260,7 @@ class _ContactScreenState extends State<ContactScreen> {
                                   child: const Align(
                                     alignment: Alignment.center,
                                     child: FaIcon(
-                                      FontAwesomeIcons.squarePhoneFlip,
-                                      size: 35,
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        '0287318962',
-                                        style: GoogleFonts.montserrat(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Telephone',
-                                        style: GoogleFonts.montserrat(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold,
-                                          color: const Color.fromARGB(
-                                              255, 87, 87, 87),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(15),
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.16),
-                                spreadRadius: 1,
-                                blurRadius: 10,
-                                offset: const Offset(0, 0),
-                              ),
-                            ],
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 30),
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: 70,
-                                  height: 70,
-                                  decoration: const BoxDecoration(
-                                    color: Color.fromARGB(255, 106, 185, 255),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(35),
-                                    ),
-                                  ),
-                                  child: const Align(
-                                    alignment: Alignment.center,
-                                    child: FaIcon(
-                                      FontAwesomeIcons.solidEnvelope,
+                                      FontAwesomeIcons.penToSquare,
                                       size: 35,
                                     ),
                                   ),
@@ -327,14 +275,14 @@ class _ContactScreenState extends State<ContactScreen> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'discutidoma.angelica@gmail.com',
+                                          'Opens: Monday, Thursday, Saturday\n\n8:00 am – 5:00pm\n\nClosed: Tuesday, Wednesday, Sunday',
                                           style: GoogleFonts.montserrat(
                                             fontSize: 20,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
                                         Text(
-                                          'Email',
+                                          'Remarks',
                                           style: GoogleFonts.montserrat(
                                             fontSize: 12,
                                             fontWeight: FontWeight.bold,
