@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const ContactScreen()),
+                                            const AboutUsScreen()),
                                   );
                                 },
                                 child: Container(
@@ -161,10 +161,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Column(
                                       children: [
                                         Container(
-                                          margin:
-                                              const EdgeInsets.only(bottom: 15),
                                           width: 70,
                                           height: 70,
+                                          margin:
+                                              const EdgeInsets.only(bottom: 15),
                                           decoration: const BoxDecoration(
                                             color: Color.fromARGB(
                                                 255, 111, 255, 106),
@@ -175,13 +175,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           child: const Align(
                                             alignment: Alignment.center,
                                             child: FaIcon(
-                                              FontAwesomeIcons.squarePhoneFlip,
+                                              FontAwesomeIcons.solidBuilding,
                                               size: 30,
                                             ),
                                           ),
                                         ),
                                         Text(
-                                          'CONTACT\nUS',
+                                          'ABOUT\nUS',
                                           textAlign: TextAlign.center,
                                           style: GoogleFonts.montserrat(
                                               fontWeight: FontWeight.bold,
@@ -192,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           padding:
                                               const EdgeInsets.only(top: 10),
                                           child: Text(
-                                            'Here you can view on how to contact us.',
+                                            'Here you can view information about us and our goal.',
                                             textAlign: TextAlign.center,
                                             style: GoogleFonts.montserrat(
                                               fontWeight: FontWeight.w500,
@@ -306,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const AboutUsScreen()),
+                                            const ContactScreen()),
                                   );
                                 },
                                 child: Container(
@@ -331,10 +331,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Column(
                                       children: [
                                         Container(
-                                          width: 70,
-                                          height: 70,
                                           margin:
                                               const EdgeInsets.only(bottom: 15),
+                                          width: 70,
+                                          height: 70,
                                           decoration: const BoxDecoration(
                                             color: Color.fromARGB(
                                                 255, 111, 255, 106),
@@ -345,13 +345,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           child: const Align(
                                             alignment: Alignment.center,
                                             child: FaIcon(
-                                              FontAwesomeIcons.solidBuilding,
+                                              FontAwesomeIcons.squarePhoneFlip,
                                               size: 30,
                                             ),
                                           ),
                                         ),
                                         Text(
-                                          'ABOUT\nUS',
+                                          'CONTACT\nUS',
                                           textAlign: TextAlign.center,
                                           style: GoogleFonts.montserrat(
                                               fontWeight: FontWeight.bold,
@@ -362,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           padding:
                                               const EdgeInsets.only(top: 10),
                                           child: Text(
-                                            'Here you can view information about us and our goal.',
+                                            'Here you can view on how to contact us.',
                                             textAlign: TextAlign.center,
                                             style: GoogleFonts.montserrat(
                                               fontWeight: FontWeight.w500,

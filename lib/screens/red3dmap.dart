@@ -4,6 +4,56 @@ import 'package:panorama/panorama.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'dart:async';
+import 'package:carousel_slider/carousel_slider.dart';
+
+final List<String> imgList = [
+  'assets/Gallery/Red/1.PNG',
+  'assets/Gallery/Red/2.PNG',
+  'assets/Gallery/Red/3.PNG',
+  'assets/Gallery/Red/4.PNG',
+  'assets/Gallery/Red/5.PNG',
+  'assets/Gallery/Red/6.PNG',
+  'assets/Gallery/Red/7.PNG',
+  'assets/Gallery/Red/8.PNG',
+  'assets/Gallery/Red/9.PNG',
+  'assets/Gallery/Red/10.PNG',
+  'assets/Gallery/Red/11.jpg',
+  'assets/Gallery/Red/12.PNG',
+  'assets/Gallery/Red/13.PNG',
+];
+
+final List<Widget> imageSliders = imgList
+    .map((item) => Container(
+          child: Container(
+            margin: EdgeInsets.all(5.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: <Widget>[
+                    Image.asset(item, fit: BoxFit.fill, width: 1000.0),
+                    Positioned(
+                      bottom: 0.0,
+                      left: 0.0,
+                      right: 0.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromARGB(200, 0, 0, 0),
+                              Color.fromARGB(0, 0, 0, 0)
+                            ],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
+          ),
+        ))
+    .toList();
 
 class RedThreeDMap extends StatefulWidget {
   const RedThreeDMap({Key? key}) : super(key: key);
@@ -1287,6 +1337,20 @@ class _RedThreeDMapState extends State<RedThreeDMap> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.bottomLeft,
+                margin: EdgeInsets.only(bottom: 50),
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                    height: 150,
+                    viewportFraction: 0.8,
+                    aspectRatio: 2.0,
+                    enlargeCenterPage: false,
+                    pageSnapping: false,
+                  ),
+                  items: imageSliders,
                 ),
               ),
             ],

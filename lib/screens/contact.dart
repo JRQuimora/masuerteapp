@@ -19,8 +19,10 @@ class MyBehavior extends ScrollBehavior {
 }
 
 Future<void> _launchUrl() async {
-  if (!await launchUrl(Uri.parse(
-      'https://www.facebook.com/groups/1322793074514263/?ref=share'))) {
+  if (!await launchUrl(
+    Uri.parse('https://www.facebook.com/groups/1322793074514263/?ref=share'),
+    mode: LaunchMode.externalApplication,
+  )) {
     throw 'Could not launch https://www.facebook.com/groups/1322793074514263/?ref=share';
   }
 }

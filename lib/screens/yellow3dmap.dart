@@ -4,6 +4,76 @@ import 'package:panorama/panorama.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'dart:async';
+import 'package:carousel_slider/carousel_slider.dart';
+
+final List<String> imgList = [
+  'assets/Gallery/Yellow/1.PNG',
+  'assets/Gallery/Yellow/2.PNG',
+  'assets/Gallery/Yellow/3.PNG',
+  'assets/Gallery/Yellow/4.PNG',
+  'assets/Gallery/Yellow/5.PNG',
+  'assets/Gallery/Yellow/6.PNG',
+  'assets/Gallery/Yellow/7.PNG',
+  'assets/Gallery/Yellow/8.PNG',
+  'assets/Gallery/Yellow/9.PNG',
+  'assets/Gallery/Yellow/10.PNG',
+  'assets/Gallery/Yellow/11.PNG',
+  'assets/Gallery/Yellow/12.PNG',
+  'assets/Gallery/Yellow/13.PNG',
+  'assets/Gallery/Yellow/14.PNG',
+  'assets/Gallery/Yellow/15.PNG',
+  'assets/Gallery/Yellow/16.PNG',
+  'assets/Gallery/Yellow/17.PNG',
+  'assets/Gallery/Yellow/18.PNG',
+  'assets/Gallery/Yellow/19.PNG',
+  'assets/Gallery/Yellow/20.PNG',
+  'assets/Gallery/Yellow/21.PNG',
+  'assets/Gallery/Yellow/22.PNG',
+  'assets/Gallery/Yellow/23.PNG',
+  'assets/Gallery/Yellow/24.PNG',
+  'assets/Gallery/Yellow/25.PNG',
+  'assets/Gallery/Yellow/26.PNG',
+  'assets/Gallery/Yellow/27.PNG',
+  'assets/Gallery/Yellow/28.PNG',
+  'assets/Gallery/Yellow/29.PNG',
+  'assets/Gallery/Yellow/30.PNG',
+  'assets/Gallery/Yellow/31.PNG',
+  'assets/Gallery/Yellow/32.PNG',
+  'assets/Gallery/Yellow/33.PNG',
+];
+
+final List<Widget> imageSliders = imgList
+    .map((item) => Container(
+          child: Container(
+            margin: EdgeInsets.all(5.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: <Widget>[
+                    Image.asset(item, fit: BoxFit.fill, width: 1000.0),
+                    Positioned(
+                      bottom: 0.0,
+                      left: 0.0,
+                      right: 0.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromARGB(200, 0, 0, 0),
+                              Color.fromARGB(0, 0, 0, 0)
+                            ],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
+          ),
+        ))
+    .toList();
 
 class YellowThreeDMap extends StatefulWidget {
   const YellowThreeDMap({Key? key}) : super(key: key);
@@ -13,6 +83,9 @@ class YellowThreeDMap extends StatefulWidget {
 }
 
 class _YellowThreeDMapState extends State<YellowThreeDMap> {
+  double _lon = 0;
+  double _lat = 0;
+
   String assetPath = "assets/Yellow/1.webp";
   String stallNo = "Stall 1-9";
   List<Hotspot> hotspot1 = [];
@@ -22,15 +95,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
   List<Hotspot> hotspot5 = [];
   List<Hotspot> hotspot6 = [];
   List<Hotspot> hotspot7 = [];
-  List<Hotspot> hotspot8 = [];
-  List<Hotspot> hotspot9 = [];
 
   int hotspotId = 1;
-  double minLat = 5;
-  double minLong = -85;
-  double maxLat = 10;
-  double maxLong = 50;
-  Rect croppedArea = const Rect.fromLTWH(0.2, 0.2, 0.5, 0.5);
 
   void resetCache() {
     Timer.periodic(const Duration(milliseconds: 30000), (timer) async {
@@ -39,13 +105,20 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
     });
   }
 
+  dynamic onViewChanged(longitude, latitude, tilt) {
+    setState(() {
+      _lon = longitude;
+      _lat = latitude;
+    });
+  }
+
   @override
   void initState() {
     resetCache();
     hotspot1 = [
       Hotspot(
-        latitude: 10,
-        longitude: 0,
+        latitude: 5,
+        longitude: 63,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -54,12 +127,9 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Yellow/2.webp";
-                hotspotId = 2;
-                stallNo = "Stall 11-18,91-92";
-                croppedArea = const Rect.fromLTWH(0.2, 0.2, 1, 0.5);
-                minLong = -180;
-                maxLong = 180;
+                assetPath = "assets/Yellow/3.webp";
+                hotspotId = 3;
+                stallNo = "Stall 19-26";
               });
             },
             icon: const Icon(
@@ -71,8 +141,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 10,
-        longitude: 45,
+        latitude: 5,
+        longitude: -70,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -81,9 +151,9 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Yellow/3.webp";
-                hotspotId = 3;
-                stallNo = "Stall 12-26";
+                assetPath = "assets/Yellow/2.webp";
+                hotspotId = 2;
+                stallNo = "Stall 83-108";
               });
             },
             icon: const Icon(
@@ -98,8 +168,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
 
     hotspot2 = [
       Hotspot(
-        latitude: 10,
-        longitude: 150,
+        latitude: 5,
+        longitude: -168,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -111,64 +181,6 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
                 assetPath = "assets/Yellow/1.webp";
                 hotspotId = 1;
                 stallNo = "Stall 1-9";
-                minLat = 5;
-                minLong = -85;
-                maxLat = 10;
-                maxLong = 50;
-                croppedArea = const Rect.fromLTWH(0.2, 0.2, 0.5, 0.5);
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 10,
-        longitude: 110,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Yellow/3.webp";
-                hotspotId = 3;
-                stallNo = "Stall 12-26";
-                minLat = 5;
-                minLong = -85;
-                maxLat = 10;
-                maxLong = 50;
-                croppedArea = const Rect.fromLTWH(0.2, 0.2, 0.5, 0.5);
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 10,
-        longitude: 40,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Yellow/4.webp";
-                hotspotId = 4;
-                stallNo = "Stall 27-34";
               });
             },
             icon: const Icon(
@@ -183,8 +195,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
 
     hotspot3 = [
       Hotspot(
-        latitude: 0,
-        longitude: -95,
+        latitude: 5,
+        longitude: -41,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -207,35 +219,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -30,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Yellow/2.webp";
-                hotspotId = 2;
-                stallNo = "Stall 11-18,91-92";
-                croppedArea = const Rect.fromLTWH(0.2, 0.2, 1, 0.5);
-                minLong = -180;
-                maxLong = 180;
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 0,
-        longitude: 0,
+        latitude: 5.6,
+        longitude: -174,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -246,10 +231,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
               setState(() {
                 assetPath = "assets/Yellow/4.webp";
                 hotspotId = 4;
-                stallNo = "Stall 27-34";
-                croppedArea = const Rect.fromLTWH(0.2, 0.2, 1, 0.5);
-                minLong = -180;
-                maxLong = 180;
+                stallNo = "Stall 43-50";
               });
             },
             icon: const Icon(
@@ -264,35 +246,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
 
     hotspot4 = [
       Hotspot(
-        latitude: 0,
-        longitude: 70,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                // assetPath = "assets/Yellow/6.webp";
-                // hotspotId = 6;
-                // stallNo = "Stall 43-50";
-                assetPath = "assets/Yellow/9.webp";
-                hotspotId = 9;
-                stallNo = "Stall 93-95,97-99";
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 10,
-        longitude: 180,
+        latitude: 5,
+        longitude: -105,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -303,12 +258,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
               setState(() {
                 assetPath = "assets/Yellow/3.webp";
                 hotspotId = 3;
-                stallNo = "Stall 12-26";
-                minLat = 5;
-                minLong = -85;
-                maxLat = 10;
-                maxLong = 50;
-                croppedArea = const Rect.fromLTWH(0.2, 0.2, 0.5, 0.5);
+                stallNo = "Stall 19-26";
               });
             },
             icon: const Icon(
@@ -320,8 +270,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: 255,
+        latitude: 5,
+        longitude: 74,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -330,9 +280,9 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Yellow/2.webp";
-                hotspotId = 2;
-                stallNo = "Stall 11-18,91-92";
+                assetPath = "assets/Yellow/5.webp";
+                hotspotId = 5;
+                stallNo = "Stall 59-66";
               });
             },
             icon: const Icon(
@@ -347,8 +297,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
 
     hotspot5 = [
       Hotspot(
-        latitude: 0,
-        longitude: -100,
+        latitude: 5,
+        longitude: -122,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -357,9 +307,9 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Yellow/7.webp";
-                hotspotId = 7;
-                stallNo = "Stall 59-66";
+                assetPath = "assets/Yellow/4.webp";
+                hotspotId = 4;
+                stallNo = "Stall 43-50";
               });
             },
             icon: const Icon(
@@ -383,7 +333,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
               setState(() {
                 assetPath = "assets/Yellow/6.webp";
                 hotspotId = 6;
-                stallNo = "Stall 43-50";
+                stallNo = "Stall 67-81";
               });
             },
             icon: const Icon(
@@ -398,7 +348,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
 
     hotspot6 = [
       Hotspot(
-        latitude: 0,
+        latitude: 5,
         longitude: 70,
         width: 60.0,
         height: 60.0,
@@ -408,9 +358,9 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Yellow/5.webp";
-                hotspotId = 5;
-                stallNo = "Stall 36-42";
+                assetPath = "assets/Yellow/7.webp";
+                hotspotId = 7;
+                stallNo = "Stall 93-95,97-99";
               });
             },
             icon: const Icon(
@@ -422,8 +372,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
         ),
       ),
       Hotspot(
-        latitude: 0,
-        longitude: -120,
+        latitude: 5,
+        longitude: -122,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -432,9 +382,9 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/Yellow/9.webp";
-                hotspotId = 9;
-                stallNo = "Stall 93-95,97-99";
+                assetPath = "assets/Yellow/5.webp";
+                hotspotId = 5;
+                stallNo = "Stall 59-66";
               });
             },
             icon: const Icon(
@@ -449,118 +399,8 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
 
     hotspot7 = [
       Hotspot(
-        latitude: 0,
-        longitude: 70,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Yellow/5.webp";
-                hotspotId = 5;
-                stallNo = "Stall 36-42";
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 0,
-        longitude: -30,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Yellow/8.webp";
-                hotspotId = 8;
-                stallNo = "Stall 67-81,83-108";
-                minLat = 5;
-                minLong = -85;
-                maxLat = 10;
-                maxLong = 50;
-                croppedArea = const Rect.fromLTWH(0.2, 0.2, 0.5, 0.5);
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-    ];
-
-    hotspot8 = [
-      Hotspot(
-        latitude: 0,
-        longitude: -15,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Yellow/7.webp";
-                hotspotId = 7;
-                stallNo = "Stall 59-66,51-58";
-                croppedArea = const Rect.fromLTWH(0.2, 0.2, 1, 0.5);
-                minLong = -180;
-                maxLong = 180;
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-    ];
-
-    hotspot9 = [
-      Hotspot(
-        latitude: 0,
-        longitude: -30,
-        width: 60.0,
-        height: 60.0,
-        widget: AvatarGlow(
-          endRadius: 100.0,
-          duration: const Duration(milliseconds: 1000),
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                assetPath = "assets/Yellow/4.webp";
-                hotspotId = 4;
-                stallNo = "Stall 27-34";
-              });
-            },
-            icon: const Icon(
-              FontAwesomeIcons.solidCircle,
-              color: Colors.white,
-              size: 30,
-            ),
-          ),
-        ),
-      ),
-      Hotspot(
-        latitude: 0,
-        longitude: 155,
+        latitude: 5,
+        longitude: -107,
         width: 60.0,
         height: 60.0,
         widget: AvatarGlow(
@@ -571,7 +411,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
               setState(() {
                 assetPath = "assets/Yellow/6.webp";
                 hotspotId = 6;
-                stallNo = "Stall 43-50";
+                stallNo = "Stall 6";
               });
             },
             icon: const Icon(
@@ -599,13 +439,14 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: Panorama(
+                  onViewChanged: onViewChanged,
                   sensitivity: 2.0,
-                  minLatitude: minLat,
-                  maxLatitude: maxLat,
-                  minLongitude: minLong,
-                  maxLongitude: maxLong,
+                  minLatitude: 5,
+                  maxLatitude: 10,
+                  minLongitude: -180,
+                  maxLongitude: 180,
                   longitude: 30,
-                  croppedArea: croppedArea,
+                  croppedArea: const Rect.fromLTWH(0.2, 0.2, 1, 0.5),
                   hotspots: hotspotId == 1
                       ? hotspot1
                       : hotspotId == 2
@@ -618,11 +459,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
                                       ? hotspot5
                                       : hotspotId == 6
                                           ? hotspot6
-                                          : hotspotId == 7
-                                              ? hotspot7
-                                              : hotspotId == 8
-                                                  ? hotspot8
-                                                  : hotspot9,
+                                          : hotspot7,
                   child: Image.asset(assetPath),
                 ),
               ),
@@ -720,7 +557,44 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
                         ],
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: Row(
+                        children: [
+                          Text(
+                            "lon: " + _lon.toString(),
+                            style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Text(
+                      "lat: " + _lat.toString(),
+                      style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                      ),
+                    ),
                   ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.bottomLeft,
+                margin: EdgeInsets.only(bottom: 50),
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                    height: 150,
+                    viewportFraction: 0.8,
+                    aspectRatio: 2.0,
+                    enlargeCenterPage: false,
+                    pageSnapping: false,
+                  ),
+                  items: imageSliders,
                 ),
               ),
             ],

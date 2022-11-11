@@ -3,7 +3,70 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:panorama/panorama.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'dart:async';
+
+final List<String> imgList = [
+  'assets/Gallery/Green/1.PNG',
+  'assets/Gallery/Green/2.PNG',
+  'assets/Gallery/Green/3.PNG',
+  'assets/Gallery/Green/4.PNG',
+  'assets/Gallery/Green/5.PNG',
+  'assets/Gallery/Green/6.PNG',
+  'assets/Gallery/Green/7.PNG',
+  'assets/Gallery/Green/8.PNG',
+  'assets/Gallery/Green/9.PNG',
+  'assets/Gallery/Green/10.PNG',
+  'assets/Gallery/Green/11.PNG',
+  'assets/Gallery/Green/12.PNG',
+  'assets/Gallery/Green/13.PNG',
+  'assets/Gallery/Green/14.PNG',
+  'assets/Gallery/Green/15.PNG',
+  'assets/Gallery/Green/16.PNG',
+  'assets/Gallery/Green/17.PNG',
+  'assets/Gallery/Green/18.PNG',
+  'assets/Gallery/Green/19.PNG',
+  'assets/Gallery/Green/20.PNG',
+  'assets/Gallery/Green/21.PNG',
+  'assets/Gallery/Green/22.PNG',
+  'assets/Gallery/Green/23.PNG',
+  'assets/Gallery/Green/24.PNG',
+  'assets/Gallery/Green/25.PNG',
+  'assets/Gallery/Green/26.PNG',
+];
+
+final List<Widget> imageSliders = imgList
+    .map((item) => Container(
+          child: Container(
+            margin: EdgeInsets.all(5.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: <Widget>[
+                    Image.asset(item, fit: BoxFit.fill, width: 1000.0),
+                    Positioned(
+                      bottom: 0.0,
+                      left: 0.0,
+                      right: 0.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromARGB(200, 0, 0, 0),
+                              Color.fromARGB(0, 0, 0, 0)
+                            ],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
+          ),
+        ))
+    .toList();
 
 class GreenThreeDMap extends StatefulWidget {
   const GreenThreeDMap({Key? key}) : super(key: key);
@@ -13,11 +76,12 @@ class GreenThreeDMap extends StatefulWidget {
 }
 
 class _GreenThreeDMapState extends State<GreenThreeDMap> {
-  double _lon = 0;
-  double _lat = 0;
+  // double _lon = 0;
+  // double _lat = 0;
+  bool isVisible = false;
 
-  String assetPath = "assets/New Green/1.webp";
-  String stallNo = "Stall 1";
+  String assetPath = "assets/Green/1.webp";
+  String stallNo = "Outside view of masuerte";
   List<Hotspot> hotspot1 = [];
   List<Hotspot> hotspot2 = [];
   List<Hotspot> hotspot3 = [];
@@ -43,12 +107,12 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
     });
   }
 
-  dynamic onViewChanged(longitude, latitude, tilt) {
-    setState(() {
-      _lon = longitude;
-      _lat = latitude;
-    });
-  }
+  // dynamic onViewChanged(longitude, latitude, tilt) {
+  //   setState(() {
+  //     _lon = longitude;
+  //     _lat = latitude;
+  //   });
+  // }
 
   @override
   void initState() {
@@ -65,9 +129,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/2.webp";
+                assetPath = "assets/Green/2.webp";
                 hotspotId = 2;
-                stallNo = "Stall 2";
+                stallNo = "Outside view of masuerte";
               });
             },
             icon: const Icon(
@@ -92,9 +156,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/3.webp";
+                assetPath = "assets/Green/3.webp";
                 hotspotId = 3;
-                stallNo = "Stall 3";
+                stallNo = "Stall 1-7";
               });
             },
             icon: const Icon(
@@ -119,9 +183,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/4.webp";
+                assetPath = "assets/Green/4.webp";
                 hotspotId = 4;
-                stallNo = "Stall 4";
+                stallNo = "Stall 34-38";
               });
             },
             icon: const Icon(
@@ -143,9 +207,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/9.webp";
+                assetPath = "assets/Green/9.webp";
                 hotspotId = 6;
-                stallNo = "Stall 6";
+                stallNo = "Stall 12-15, 8-11";
               });
             },
             icon: const Icon(
@@ -170,9 +234,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/3.webp";
+                assetPath = "assets/Green/3.webp";
                 hotspotId = 3;
-                stallNo = "Stall 3";
+                stallNo = "Stall 1-7";
               });
             },
             icon: const Icon(
@@ -194,9 +258,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/8.webp";
+                assetPath = "assets/Green/8.webp";
                 hotspotId = 5;
-                stallNo = "Stall 5";
+                stallNo = "Stall 1-7";
               });
             },
             icon: const Icon(
@@ -221,9 +285,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/4.webp";
+                assetPath = "assets/Green/4.webp";
                 hotspotId = 4;
-                stallNo = "Stall 4";
+                stallNo = "Stall 34-38";
               });
             },
             icon: const Icon(
@@ -245,9 +309,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/9.webp";
+                assetPath = "assets/Green/9.webp";
                 hotspotId = 6;
-                stallNo = "Stall 6";
+                stallNo = "Stall 12-15, 8-11";
               });
             },
             icon: const Icon(
@@ -269,9 +333,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/14.webp";
+                assetPath = "assets/Green/14.webp";
                 hotspotId = 8;
-                stallNo = "Stall 8";
+                stallNo = "Stall 99-103";
               });
             },
             icon: const Icon(
@@ -296,9 +360,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/3.webp";
+                assetPath = "assets/Green/3.webp";
                 hotspotId = 3;
-                stallNo = "Stall 3";
+                stallNo = "Stall 1-7";
               });
             },
             icon: const Icon(
@@ -320,9 +384,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/8.webp";
+                assetPath = "assets/Green/8.webp";
                 hotspotId = 5;
-                stallNo = "Stall 5";
+                stallNo = "Stall 1-7";
               });
             },
             icon: const Icon(
@@ -344,9 +408,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/10.webp";
+                assetPath = "assets/Green/10.webp";
                 hotspotId = 7;
-                stallNo = "Stall 7";
+                stallNo = "Stall 16-18, 19-23";
               });
             },
             icon: const Icon(
@@ -371,9 +435,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/9.webp";
+                assetPath = "assets/Green/9.webp";
                 hotspotId = 6;
-                stallNo = "Stall 6";
+                stallNo = "Stall 12-15, 8-11";
               });
             },
             icon: const Icon(
@@ -395,9 +459,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/14.webp";
+                assetPath = "assets/Green/14.webp";
                 hotspotId = 8;
-                stallNo = "Stall 8";
+                stallNo = "Stall 99-103";
               });
             },
             icon: const Icon(
@@ -419,9 +483,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/11.webp";
+                assetPath = "assets/Green/11.webp";
                 hotspotId = 9;
-                stallNo = "Stall 9";
+                stallNo = "Stall 35-40";
               });
             },
             icon: const Icon(
@@ -446,9 +510,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/8.webp";
+                assetPath = "assets/Green/8.webp";
                 hotspotId = 5;
-                stallNo = "Stall 5";
+                stallNo = "Stall 1-7";
               });
             },
             icon: const Icon(
@@ -470,9 +534,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/10.webp";
+                assetPath = "assets/Green/10.webp";
                 hotspotId = 7;
-                stallNo = "Stall 7";
+                stallNo = "Stall 16-18, 19-23";
               });
             },
             icon: const Icon(
@@ -497,9 +561,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/10.webp";
+                assetPath = "assets/Green/10.webp";
                 hotspotId = 7;
-                stallNo = "Stall 7";
+                stallNo = "Stall 16-18, 19-23";
               });
             },
             icon: const Icon(
@@ -521,9 +585,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/12.webp";
+                assetPath = "assets/Green/12.webp";
                 hotspotId = 10;
-                stallNo = "Stall 10";
+                stallNo = "Stall 48-54";
               });
             },
             icon: const Icon(
@@ -548,9 +612,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/11.webp";
+                assetPath = "assets/Green/11.webp";
                 hotspotId = 9;
-                stallNo = "Stall 9";
+                stallNo = "Stall 35-40";
               });
             },
             icon: const Icon(
@@ -572,9 +636,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/13.webp";
+                assetPath = "assets/Green/13.webp";
                 hotspotId = 11;
-                stallNo = "Stall 11";
+                stallNo = "Stall 63-70";
               });
             },
             icon: const Icon(
@@ -596,9 +660,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/6.webp";
+                assetPath = "assets/Green/6.webp";
                 hotspotId = 13;
-                stallNo = "Stall 13";
+                stallNo = "Stall 8-11,12-15";
               });
             },
             icon: const Icon(
@@ -623,9 +687,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/12.webp";
+                assetPath = "assets/Green/12.webp";
                 hotspotId = 10;
-                stallNo = "Stall 10";
+                stallNo = "Stall 48-54";
               });
             },
             icon: const Icon(
@@ -647,9 +711,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/5.webp";
+                assetPath = "assets/Green/5.webp";
                 hotspotId = 12;
-                stallNo = "Stall 12";
+                stallNo = "Stall 71-78";
               });
             },
             icon: const Icon(
@@ -674,9 +738,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/13.webp";
+                assetPath = "assets/Green/13.webp";
                 hotspotId = 11;
-                stallNo = "Stall 11";
+                stallNo = "Stall 63-70";
               });
             },
             icon: const Icon(
@@ -698,9 +762,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/6.webp";
+                assetPath = "assets/Green/6.webp";
                 hotspotId = 13;
-                stallNo = "Stall 13";
+                stallNo = "Stall 8-11,12-15";
               });
             },
             icon: const Icon(
@@ -722,9 +786,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/16.webp";
+                assetPath = "assets/Green/16.webp";
                 hotspotId = 15;
-                stallNo = "Stall 15";
+                stallNo = "Stall 79-85";
               });
             },
             icon: const Icon(
@@ -749,9 +813,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/12.webp";
+                assetPath = "assets/Green/12.webp";
                 hotspotId = 10;
-                stallNo = "Stall 10";
+                stallNo = "Stall 48-54";
               });
             },
             icon: const Icon(
@@ -773,9 +837,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/5.webp";
+                assetPath = "assets/Green/5.webp";
                 hotspotId = 12;
-                stallNo = "Stall 12";
+                stallNo = "Stall 71-78";
               });
             },
             icon: const Icon(
@@ -797,9 +861,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/7.webp";
+                assetPath = "assets/Green/7.webp";
                 hotspotId = 14;
-                stallNo = "Stall 14";
+                stallNo = "Stall 79-85,87-94";
               });
             },
             icon: const Icon(
@@ -824,9 +888,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/6.webp";
+                assetPath = "assets/Green/6.webp";
                 hotspotId = 13;
-                stallNo = "Stall 13";
+                stallNo = "Stall 8-11,12-15";
               });
             },
             icon: const Icon(
@@ -848,9 +912,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/16.webp";
+                assetPath = "assets/Green/16.webp";
                 hotspotId = 15;
-                stallNo = "Stall 15";
+                stallNo = "Stall 79-85";
               });
             },
             icon: const Icon(
@@ -874,9 +938,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/5.webp";
+                assetPath = "assets/Green/5.webp";
                 hotspotId = 12;
-                stallNo = "Stall 12";
+                stallNo = "Stall 71-78";
               });
             },
             icon: const Icon(
@@ -898,9 +962,9 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
           child: IconButton(
             onPressed: () {
               setState(() {
-                assetPath = "assets/New Green/7.webp";
+                assetPath = "assets/Green/7.webp";
                 hotspotId = 14;
-                stallNo = "Stall 14";
+                stallNo = "Stall 79-85,87-94";
               });
             },
             icon: const Icon(
@@ -928,7 +992,7 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: Panorama(
-                  onViewChanged: onViewChanged,
+                  // onViewChanged: onViewChanged,
                   sensitivity: 2.0,
                   minLatitude: 5,
                   maxLatitude: 10,
@@ -1065,31 +1129,25 @@ class _GreenThreeDMapState extends State<GreenThreeDMap> {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 5),
-                      child: Row(
-                        children: [
-                          Text(
-                            "lon: " + _lon.toString(),
-                            style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Text(
-                      "lat: " + _lat.toString(),
-                      style: GoogleFonts.montserrat(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                      ),
-                    ),
                   ],
                 ),
+              ),
+              Container(
+                alignment: Alignment.bottomLeft,
+                margin: EdgeInsets.only(bottom: 50),
+                child: hotspotId < 3
+                    ? Container()
+                    : CarouselSlider(
+                        options: CarouselOptions(
+                          height: 150,
+                          viewportFraction: 0.8,
+                          aspectRatio: 2,
+                          enlargeCenterPage: false,
+                          pageSnapping: false,
+                          autoPlay: false,
+                        ),
+                        items: imageSliders,
+                      ),
               ),
             ],
           ),

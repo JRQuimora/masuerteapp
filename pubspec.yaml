@@ -1,5 +1,5 @@
 name: masuerteapp
-description: A new Flutter project.
+description: A Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 2.0.0+1
 
 environment:
   sdk: ">=2.17.5 <3.0.0"
@@ -41,6 +41,7 @@ dependencies:
   touchable: ^1.0.2
   avatar_glow: ^2.0.2
   url_launcher: ^6.1.5
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
@@ -88,38 +89,7 @@ flutter:
     - assets/Green/12.webp
     - assets/Green/13.webp
     - assets/Green/14.webp
-
-    - assets/Green/1.webp
-    - assets/Green/2.webp
-    - assets/Green/3.webp
-    - assets/Green/4.webp
-    - assets/Green/5.webp
-    - assets/Green/6.webp
-    - assets/Green/7.webp
-    - assets/Green/8.webp
-    - assets/Green/9.webp
-    - assets/Green/10.webp
-    - assets/Green/11.webp
-    - assets/Green/12.webp
-    - assets/Green/13.webp
-    - assets/Green/14.webp
-
-
-    - assets/New Green/1.webp
-    - assets/New Green/2.webp
-    - assets/New Green/3.webp
-    - assets/New Green/4.webp
-    - assets/New Green/5.webp
-    - assets/New Green/6.webp
-    - assets/New Green/7.webp
-    - assets/New Green/8.webp
-    - assets/New Green/9.webp
-    - assets/New Green/10.webp
-    - assets/New Green/11.webp
-    - assets/New Green/12.webp
-    - assets/New Green/13.webp
-    - assets/New Green/14.webp
-    - assets/New Green/16.webp
+    - assets/Green/16.webp
 
     - assets/Yellow/1.webp
     - assets/Yellow/2.webp
@@ -128,8 +98,6 @@ flutter:
     - assets/Yellow/5.webp
     - assets/Yellow/6.webp
     - assets/Yellow/7.webp
-    - assets/Yellow/8.webp
-    - assets/Yellow/9.webp
 
     - assets/Red/1.webp
     - assets/Red/2.webp
@@ -147,7 +115,7 @@ flutter:
     - assets/Red/14.webp
     - assets/Red/15.webp
     - assets/Red/16.webp
-
+    
     - assets/Pink/1.webp
     - assets/Pink/2.webp
     - assets/Pink/3.webp
@@ -164,7 +132,7 @@ flutter:
     - assets/Pink/14.webp
     - assets/Pink/15.webp
     - assets/Pink/16.webp
-    - assets/Pink/17.webp
+    - assets/Pink/17.jpg
     - assets/Pink/18.webp
     - assets/Pink/19.webp
     - assets/Pink/20.webp
@@ -201,6 +169,135 @@ flutter:
     - assets/Orange/16.webp
     - assets/Orange/17.webp
 
+    - assets/Gallery/Blue/1.PNG
+    - assets/Gallery/Blue/2.PNG
+    - assets/Gallery/Blue/3.PNG
+    - assets/Gallery/Blue/4.PNG
+    - assets/Gallery/Blue/5.PNG
+    - assets/Gallery/Blue/6.PNG
+    - assets/Gallery/Blue/7.PNG
+    - assets/Gallery/Blue/8.PNG
+    - assets/Gallery/Blue/9.PNG
+    - assets/Gallery/Blue/10.PNG
+    - assets/Gallery/Blue/11.PNG
+    - assets/Gallery/Blue/12.PNG
+
+    - assets/Gallery/Green/1.PNG
+    - assets/Gallery/Green/2.PNG
+    - assets/Gallery/Green/3.PNG
+    - assets/Gallery/Green/4.PNG
+    - assets/Gallery/Green/5.PNG
+    - assets/Gallery/Green/6.PNG
+    - assets/Gallery/Green/7.PNG
+    - assets/Gallery/Green/8.PNG
+    - assets/Gallery/Green/9.PNG
+    - assets/Gallery/Green/10.PNG
+    - assets/Gallery/Green/11.PNG
+    - assets/Gallery/Green/12.PNG
+    - assets/Gallery/Green/13.PNG
+    - assets/Gallery/Green/14.PNG
+    - assets/Gallery/Green/15.PNG
+    - assets/Gallery/Green/16.PNG
+    - assets/Gallery/Green/17.PNG
+    - assets/Gallery/Green/18.PNG
+    - assets/Gallery/Green/19.PNG
+    - assets/Gallery/Green/20.PNG
+    - assets/Gallery/Green/21.PNG
+    - assets/Gallery/Green/22.PNG
+    - assets/Gallery/Green/23.PNG
+    - assets/Gallery/Green/24.PNG
+    - assets/Gallery/Green/25.PNG
+    - assets/Gallery/Green/26.PNG
+
+    - assets/Gallery/Orange/1.PNG
+    - assets/Gallery/Orange/2.PNG
+    - assets/Gallery/Orange/3.PNG
+    - assets/Gallery/Orange/4.PNG
+    - assets/Gallery/Orange/5.PNG
+    - assets/Gallery/Orange/6.PNG
+    - assets/Gallery/Orange/7.PNG
+    - assets/Gallery/Orange/8.PNG
+    - assets/Gallery/Orange/9.PNG
+    - assets/Gallery/Orange/10.PNG
+    - assets/Gallery/Orange/11.PNG
+    - assets/Gallery/Orange/12.PNG
+    - assets/Gallery/Orange/13.PNG
+    - assets/Gallery/Orange/14.PNG
+    - assets/Gallery/Orange/15.PNG
+    - assets/Gallery/Orange/16.PNG
+    - assets/Gallery/Orange/17.PNG
+    - assets/Gallery/Orange/18.PNG
+    - assets/Gallery/Orange/19.PNG
+    - assets/Gallery/Orange/20.PNG
+    - assets/Gallery/Orange/21.PNG
+    - assets/Gallery/Orange/22.PNG
+    - assets/Gallery/Orange/23.PNG
+    - assets/Gallery/Orange/24.PNG
+
+    - assets/Gallery/Pink/1.PNG
+    - assets/Gallery/Pink/2.PNG
+    - assets/Gallery/Pink/3.PNG
+    - assets/Gallery/Pink/4.PNG
+    - assets/Gallery/Pink/5.PNG
+    - assets/Gallery/Pink/6.PNG
+    - assets/Gallery/Pink/7.PNG
+    - assets/Gallery/Pink/8.PNG
+    - assets/Gallery/Pink/9.PNG
+    - assets/Gallery/Pink/10.PNG
+    - assets/Gallery/Pink/11.jpg
+    - assets/Gallery/Pink/12.PNG
+    - assets/Gallery/Pink/13.PNG
+    - assets/Gallery/Pink/14.PNG
+    - assets/Gallery/Pink/15.PNG
+    - assets/Gallery/Pink/16.PNG
+
+    - assets/Gallery/Red/1.PNG
+    - assets/Gallery/Red/2.PNG
+    - assets/Gallery/Red/3.PNG
+    - assets/Gallery/Red/4.PNG
+    - assets/Gallery/Red/5.PNG
+    - assets/Gallery/Red/6.PNG
+    - assets/Gallery/Red/7.PNG
+    - assets/Gallery/Red/8.PNG
+    - assets/Gallery/Red/9.PNG
+    - assets/Gallery/Red/10.PNG
+    - assets/Gallery/Red/11.jpg
+    - assets/Gallery/Red/12.PNG
+    - assets/Gallery/Red/13.PNG
+
+    - assets/Gallery/Yellow/1.PNG
+    - assets/Gallery/Yellow/2.PNG
+    - assets/Gallery/Yellow/3.PNG
+    - assets/Gallery/Yellow/4.PNG
+    - assets/Gallery/Yellow/5.PNG
+    - assets/Gallery/Yellow/6.PNG
+    - assets/Gallery/Yellow/7.PNG
+    - assets/Gallery/Yellow/8.PNG
+    - assets/Gallery/Yellow/9.PNG
+    - assets/Gallery/Yellow/10.PNG
+    - assets/Gallery/Yellow/11.PNG
+    - assets/Gallery/Yellow/12.PNG
+    - assets/Gallery/Yellow/13.PNG
+    - assets/Gallery/Yellow/14.PNG
+    - assets/Gallery/Yellow/15.PNG
+    - assets/Gallery/Yellow/16.PNG
+    - assets/Gallery/Yellow/17.PNG
+    - assets/Gallery/Yellow/18.PNG
+    - assets/Gallery/Yellow/19.PNG
+    - assets/Gallery/Yellow/20.PNG
+    - assets/Gallery/Yellow/21.PNG
+    - assets/Gallery/Yellow/22.PNG
+    - assets/Gallery/Yellow/23.PNG
+    - assets/Gallery/Yellow/24.PNG
+    - assets/Gallery/Yellow/25.PNG
+    - assets/Gallery/Yellow/26.PNG
+    - assets/Gallery/Yellow/27.PNG
+    - assets/Gallery/Yellow/28.PNG
+    - assets/Gallery/Yellow/29.PNG
+    - assets/Gallery/Yellow/30.PNG
+    - assets/Gallery/Yellow/31.PNG
+    - assets/Gallery/Yellow/32.PNG
+    - assets/Gallery/Yellow/33.PNG
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
