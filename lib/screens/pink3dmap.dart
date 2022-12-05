@@ -6,57 +6,145 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'dart:async';
 import 'package:carousel_slider/carousel_slider.dart';
 
-final List<String> imgList = [
-  'assets/Gallery/Pink/1.PNG',
-  'assets/Gallery/Pink/2.PNG',
-  'assets/Gallery/Pink/3.PNG',
-  'assets/Gallery/Pink/4.PNG',
-  'assets/Gallery/Pink/5.PNG',
-  'assets/Gallery/Pink/6.PNG',
-  'assets/Gallery/Pink/7.PNG',
-  'assets/Gallery/Pink/8.PNG',
-  'assets/Gallery/Pink/9.PNG',
-  'assets/Gallery/Pink/10.PNG',
-  'assets/Gallery/Pink/11.jpg',
-  'assets/Gallery/Pink/12.PNG',
-  'assets/Gallery/Pink/13.PNG',
-  'assets/Gallery/Pink/14.PNG',
-  'assets/Gallery/Pink/15.PNG',
-  'assets/Gallery/Pink/16.PNG',
+List<String> imgList1 = [
+  'assets/Gallery/Pink/113.png',
+  'assets/Gallery/Pink/138.jpg',
 ];
 
-final List<Widget> imageSliders = imgList
-    .map((item) => Container(
-          child: Container(
-            margin: EdgeInsets.all(5.0),
-            child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                child: Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: <Widget>[
-                    Image.asset(item, fit: BoxFit.fill, width: 1000.0),
-                    Positioned(
-                      bottom: 0.0,
-                      left: 0.0,
-                      right: 0.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(200, 0, 0, 0),
-                              Color.fromARGB(0, 0, 0, 0)
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-          ),
-        ))
-    .toList();
+List<String> imgList2 = [
+  'assets/Gallery/Pink/1.jpg',
+  'assets/Gallery/Pink/2-3.jpg',
+  'assets/Gallery/Pink/28.jpg',
+  'assets/Gallery/Pink/29-32.jpg',
+  'assets/Gallery/Pink/33.jpg',
+];
+
+List<String> imgList3 = [
+  'assets/Gallery/Pink/12-13.jpg',
+  'assets/Gallery/Pink/34-35.jpg',
+  'assets/Gallery/Pink/36-37.jpg',
+  'assets/Gallery/Pink/38-39.jpg',
+];
+
+List<String> imgList4 = [
+  'assets/Gallery/Pink/14.jpg',
+  'assets/Gallery/Pink/15.jpg',
+  'assets/Gallery/Pink/20-21.png',
+];
+
+List<String> imgList5 = [
+  'assets/Gallery/Pink/12-13.jpg',
+  'assets/Gallery/Pink/14.jpg',
+  'assets/Gallery/Pink/15.jpg',
+  'assets/Gallery/Pink/20-21.png',
+  'assets/Gallery/Pink/22-23.png',
+];
+
+List<String> imgList6 = [
+  'assets/Gallery/Pink/69-70.png',
+  'assets/Gallery/Pink/95-96_71.jpg',
+  'assets/Gallery/Pink/73.png',
+];
+
+List<String> imgList7 = [
+  'assets/Gallery/Pink/67-68.png',
+  'assets/Gallery/Pink/73.png',
+  'assets/Gallery/Pink/88.png',
+];
+
+List<String> imgList8 = [
+  'assets/Gallery/Pink/82-84.jpg',
+  'assets/Gallery/Pink/62_89.png',
+];
+
+List<String> imgList9 = [
+  'assets/Gallery/Pink/57_81.jpg',
+];
+
+List<String> imgList10 = [
+  'assets/Gallery/Pink/129.png',
+  'assets/Gallery/Pink/124-125.png',
+  'assets/Gallery/Pink/104-105_46.png',
+  'assets/Gallery/Pink/100-103.png',
+];
+
+List<String> imgList11 = [
+  'assets/Gallery/Pink/134.png',
+  'assets/Gallery/Pink/130-131.png',
+];
+
+List<String> imgList12 = [
+  'assets/Gallery/Pink/138.jpg',
+  'assets/Gallery/Pink/113.png',
+];
+
+List<String> imgList13 = [
+  'assets/Gallery/Pink/148.png',
+  'assets/Gallery/Pink/143-144.png',
+];
+
+List<String> imgList14 = [
+  'assets/Gallery/Pink/124-125.png',
+];
+
+List<String> imgList15 = [
+  'assets/Gallery/Pink/165.png',
+  'assets/Gallery/Pink/162-163.png',
+  'assets/Gallery/Pink/160-161_185-187.png',
+  'assets/Gallery/Pink/158-159.jpg',
+  'assets/Gallery/Pink/157.jpg',
+];
+
+List<String> imgList16 = [
+  'assets/Gallery/Pink/168.jpg',
+];
+
+List<String> imgList17 = [
+  'assets/Gallery/Pink/104-105_46.png',
+  'assets/Gallery/Pink/22-23.png',
+  'assets/Gallery/Pink/20-21.png',
+  'assets/Gallery/Pink/15.jpg',
+  'assets/Gallery/Pink/14.jpg',
+  'assets/Gallery/Pink/12-13.jpg',
+];
+
+List<String> imgList18 = [
+  'assets/Gallery/Pink/104-105_46.png',
+  'assets/Gallery/Pink/22-23.png',
+  'assets/Gallery/Pink/20-21.png',
+  'assets/Gallery/Pink/15.jpg',
+  'assets/Gallery/Pink/14.jpg',
+  'assets/Gallery/Pink/12-13.jpg',
+];
+
+List<String> imgList19 = [
+  'assets/Gallery/Pink/104-105_46.png',
+  'assets/Gallery/Pink/22-23.png',
+  'assets/Gallery/Pink/20-21.png',
+  'assets/Gallery/Pink/15.jpg',
+  'assets/Gallery/Pink/14.jpg',
+  'assets/Gallery/Pink/12-13.jpg',
+];
+
+List<String> imgList20 = [
+  'assets/Gallery/Pink/193-195.jpg',
+  'assets/Gallery/Pink/188-190.jpg',
+];
+
+List<String> imgList21 = [
+  'assets/Gallery/Pink/193-195.jpg',
+];
+
+List<String> imgList22 = [
+  'assets/Gallery/Pink/104-105_46.png',
+  'assets/Gallery/Pink/22-23.png',
+  'assets/Gallery/Pink/20-21.png',
+  'assets/Gallery/Pink/15.jpg',
+  'assets/Gallery/Pink/14.jpg',
+  'assets/Gallery/Pink/12-13.jpg',
+];
+
+List<String> imgList = [];
 
 class PinkThreeDMap extends StatefulWidget {
   const PinkThreeDMap({Key? key}) : super(key: key);
@@ -96,6 +184,42 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
 
   int hotspotId = 1;
 
+  List<Widget> imageSliders = [];
+  void refreshImageSliders(List<String> ImageList) {
+    setState(() {
+      imageSliders = ImageList.map((item) => Container(
+            child: Container(
+              margin: EdgeInsets.all(5.0),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: <Widget>[
+                      Image.asset(item, fit: BoxFit.fill, width: 1000.0),
+                      Positioned(
+                        bottom: 0.0,
+                        left: 0.0,
+                        right: 0.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(200, 0, 0, 0),
+                                Color.fromARGB(0, 0, 0, 0)
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+            ),
+          )).toList();
+    });
+  }
+
   void resetCache() {
     Timer.periodic(const Duration(milliseconds: 30000), (timer) async {
       PaintingBinding.instance.imageCache.clear();
@@ -112,6 +236,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
 
   @override
   void initState() {
+    refreshImageSliders(imgList1);
     resetCache();
     hotspot1 = [
       Hotspot(
@@ -124,6 +249,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList2);
               setState(() {
                 assetPath = "assets/Pink/2.webp";
                 hotspotId = 2;
@@ -148,6 +274,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList12);
               setState(() {
                 assetPath = "assets/Pink/12.webp";
                 hotspotId = 12;
@@ -172,6 +299,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList13);
               setState(() {
                 assetPath = "assets/Pink/13.webp";
                 hotspotId = 13;
@@ -196,6 +324,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList22);
               setState(() {
                 assetPath = "assets/Pink/22.webp";
                 hotspotId = 22;
@@ -223,6 +352,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList1);
               setState(() {
                 assetPath = "assets/Pink/1.webp";
                 hotspotId = 1;
@@ -247,6 +377,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList3);
               setState(() {
                 assetPath = "assets/Pink/3.webp";
                 hotspotId = 3;
@@ -271,6 +402,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList12);
               setState(() {
                 assetPath = "assets/Pink/12.webp";
                 hotspotId = 12;
@@ -298,6 +430,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList2);
               setState(() {
                 assetPath = "assets/Pink/2.webp";
                 hotspotId = 2;
@@ -322,6 +455,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList4);
               setState(() {
                 assetPath = "assets/Pink/4.webp";
                 hotspotId = 4;
@@ -349,6 +483,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList3);
               setState(() {
                 assetPath = "assets/Pink/3.webp";
                 hotspotId = 3;
@@ -373,6 +508,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList5);
               setState(() {
                 assetPath = "assets/Pink/5.webp";
                 hotspotId = 5;
@@ -400,6 +536,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList6);
               setState(() {
                 assetPath = "assets/Pink/6.webp";
                 hotspotId = 6;
@@ -424,6 +561,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList4);
               setState(() {
                 assetPath = "assets/Pink/4.webp";
                 hotspotId = 4;
@@ -451,6 +589,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList7);
               setState(() {
                 assetPath = "assets/Pink/7.webp";
                 hotspotId = 7;
@@ -475,6 +614,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList5);
               setState(() {
                 assetPath = "assets/Pink/5.webp";
                 hotspotId = 5;
@@ -502,6 +642,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList6);
               setState(() {
                 assetPath = "assets/Pink/6.webp";
                 hotspotId = 6;
@@ -526,6 +667,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList8);
               setState(() {
                 assetPath = "assets/Pink/8.webp";
                 hotspotId = 8;
@@ -553,6 +695,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList7);
               setState(() {
                 assetPath = "assets/Pink/7.jpg";
                 hotspotId = 7;
@@ -577,6 +720,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList9);
               setState(() {
                 assetPath = "assets/Pink/9.webp";
                 hotspotId = 9;
@@ -601,6 +745,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList17);
               setState(() {
                 assetPath = "assets/Pink/17.jpg";
                 hotspotId = 17;
@@ -628,6 +773,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList10);
               setState(() {
                 assetPath = "assets/Pink/10.webp";
                 hotspotId = 10;
@@ -652,6 +798,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList8);
               setState(() {
                 assetPath = "assets/Pink/8.webp";
                 hotspotId = 8;
@@ -679,6 +826,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList11);
               setState(() {
                 assetPath = "assets/Pink/11.webp";
                 hotspotId = 11;
@@ -703,6 +851,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList9);
               setState(() {
                 assetPath = "assets/Pink/9.webp";
                 hotspotId = 9;
@@ -730,6 +879,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList12);
               setState(() {
                 assetPath = "assets/Pink/12.webp";
                 hotspotId = 12;
@@ -754,6 +904,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList10);
               setState(() {
                 assetPath = "assets/Pink/10.webp";
                 hotspotId = 10;
@@ -781,6 +932,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList11);
               setState(() {
                 assetPath = "assets/Pink/11.webp";
                 hotspotId = 11;
@@ -805,6 +957,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList2);
               setState(() {
                 assetPath = "assets/Pink/2.webp";
                 hotspotId = 2;
@@ -829,6 +982,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList13);
               setState(() {
                 assetPath = "assets/Pink/13.webp";
                 hotspotId = 13;
@@ -853,6 +1007,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList22);
               setState(() {
                 assetPath = "assets/Pink/22.webp";
                 hotspotId = 22;
@@ -877,6 +1032,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList1);
               setState(() {
                 assetPath = "assets/Pink/1.webp";
                 hotspotId = 1;
@@ -904,6 +1060,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList1);
               setState(() {
                 assetPath = "assets/Pink/1.webp";
                 hotspotId = 1;
@@ -928,6 +1085,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList12);
               setState(() {
                 assetPath = "assets/Pink/12.webp";
                 hotspotId = 12;
@@ -952,6 +1110,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList2);
               setState(() {
                 assetPath = "assets/Pink/2.webp";
                 hotspotId = 2;
@@ -976,6 +1135,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList14);
               setState(() {
                 assetPath = "assets/Pink/14.webp";
                 hotspotId = 14;
@@ -1000,6 +1160,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList22);
               setState(() {
                 assetPath = "assets/Pink/22.webp";
                 hotspotId = 22;
@@ -1027,6 +1188,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList13);
               setState(() {
                 assetPath = "assets/Pink/13.webp";
                 hotspotId = 13;
@@ -1051,6 +1213,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList15);
               setState(() {
                 assetPath = "assets/Pink/15.webp";
                 hotspotId = 15;
@@ -1078,6 +1241,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList16);
               setState(() {
                 assetPath = "assets/Pink/16.webp";
                 hotspotId = 16;
@@ -1102,6 +1266,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList14);
               setState(() {
                 assetPath = "assets/Pink/14.webp";
                 hotspotId = 14;
@@ -1129,6 +1294,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList17);
               setState(() {
                 assetPath = "assets/Pink/17.jpg";
                 hotspotId = 17;
@@ -1153,6 +1319,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList15);
               setState(() {
                 assetPath = "assets/Pink/15.webp";
                 hotspotId = 15;
@@ -1180,6 +1347,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList8);
               setState(() {
                 assetPath = "assets/Pink/8.webp";
                 hotspotId = 8;
@@ -1204,6 +1372,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList16);
               setState(() {
                 assetPath = "assets/Pink/16.webp";
                 hotspotId = 16;
@@ -1228,6 +1397,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList18);
               setState(() {
                 assetPath = "assets/Pink/18.webp";
                 hotspotId = 18;
@@ -1255,6 +1425,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList19);
               setState(() {
                 assetPath = "assets/Pink/19.webp";
                 hotspotId = 19;
@@ -1279,6 +1450,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList17);
               setState(() {
                 assetPath = "assets/Pink/17.jpg";
                 hotspotId = 17;
@@ -1306,6 +1478,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList20);
               setState(() {
                 assetPath = "assets/Pink/20.webp";
                 hotspotId = 20;
@@ -1330,6 +1503,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList18);
               setState(() {
                 assetPath = "assets/Pink/18.webp";
                 hotspotId = 18;
@@ -1357,6 +1531,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList21);
               setState(() {
                 assetPath = "assets/Pink/21.webp";
                 hotspotId = 21;
@@ -1381,6 +1556,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList19);
               setState(() {
                 assetPath = "assets/Pink/19.webp";
                 hotspotId = 19;
@@ -1408,6 +1584,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList22);
               setState(() {
                 assetPath = "assets/Pink/22.webp";
                 hotspotId = 22;
@@ -1432,6 +1609,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList20);
               setState(() {
                 assetPath = "assets/Pink/20.webp";
                 hotspotId = 20;
@@ -1459,6 +1637,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList21);
               setState(() {
                 assetPath = "assets/Pink/21.webp";
                 hotspotId = 21;
@@ -1483,6 +1662,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList13);
               setState(() {
                 assetPath = "assets/Pink/13.webp";
                 hotspotId = 13;
@@ -1507,6 +1687,7 @@ class _PinkThreeDMapState extends State<PinkThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList1);
               setState(() {
                 assetPath = "assets/Pink/1.webp";
                 hotspotId = 1;

@@ -20,10 +20,11 @@ class MyBehavior extends ScrollBehavior {
 
 Future<void> _launchUrl() async {
   if (!await launchUrl(
-    Uri.parse('https://www.facebook.com/groups/1322793074514263/?ref=share'),
+    Uri.parse(
+        'https://www.facebook.com/groups/166579510754736/?ref=share&mibextid=NSMWBT'),
     mode: LaunchMode.externalApplication,
   )) {
-    throw 'Could not launch https://www.facebook.com/groups/1322793074514263/?ref=share';
+    throw 'Could not launch https://www.facebook.com/groups/166579510754736/?ref=share&mibextid=NSMWBT';
   }
 }
 
@@ -205,7 +206,7 @@ class _ContactScreenState extends State<ContactScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'https://www.facebook.com/groups/1322793074514263/?ref=share',
+                                            'https://www.facebook.com/groups/166579510754736/?ref=share&mibextid=NSMWBT',
                                             style: GoogleFonts.montserrat(
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold,

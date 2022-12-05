@@ -6,74 +6,53 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'dart:async';
 import 'package:carousel_slider/carousel_slider.dart';
 
-final List<String> imgList = [
-  'assets/Gallery/Yellow/1.PNG',
-  'assets/Gallery/Yellow/2.PNG',
-  'assets/Gallery/Yellow/3.PNG',
-  'assets/Gallery/Yellow/4.PNG',
-  'assets/Gallery/Yellow/5.PNG',
-  'assets/Gallery/Yellow/6.PNG',
-  'assets/Gallery/Yellow/7.PNG',
-  'assets/Gallery/Yellow/8.PNG',
-  'assets/Gallery/Yellow/9.PNG',
-  'assets/Gallery/Yellow/10.PNG',
-  'assets/Gallery/Yellow/11.PNG',
-  'assets/Gallery/Yellow/12.PNG',
-  'assets/Gallery/Yellow/13.PNG',
-  'assets/Gallery/Yellow/14.PNG',
-  'assets/Gallery/Yellow/15.PNG',
-  'assets/Gallery/Yellow/16.PNG',
-  'assets/Gallery/Yellow/17.PNG',
-  'assets/Gallery/Yellow/18.PNG',
-  'assets/Gallery/Yellow/19.PNG',
-  'assets/Gallery/Yellow/20.PNG',
-  'assets/Gallery/Yellow/21.PNG',
-  'assets/Gallery/Yellow/22.PNG',
-  'assets/Gallery/Yellow/23.PNG',
-  'assets/Gallery/Yellow/24.PNG',
-  'assets/Gallery/Yellow/25.PNG',
-  'assets/Gallery/Yellow/26.PNG',
-  'assets/Gallery/Yellow/27.PNG',
-  'assets/Gallery/Yellow/28.PNG',
-  'assets/Gallery/Yellow/29.PNG',
-  'assets/Gallery/Yellow/30.PNG',
-  'assets/Gallery/Yellow/31.PNG',
-  'assets/Gallery/Yellow/32.PNG',
-  'assets/Gallery/Yellow/33.PNG',
+List<String> imgList1 = [];
+
+List<String> imgList2 = [
+  'assets/Gallery/Yellow/104.png',
+  'assets/Gallery/Yellow/102.png',
+  'assets/Gallery/Yellow/96-97.png',
+  'assets/Gallery/Yellow/94_99.png',
+  'assets/Gallery/Yellow/92-93.png',
+  'assets/Gallery/Yellow/87-90.png',
+  'assets/Gallery/Yellow/56-58_99-101.png',
 ];
 
-final List<Widget> imageSliders = imgList
-    .map((item) => Container(
-          child: Container(
-            margin: EdgeInsets.all(5.0),
-            child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                child: Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: <Widget>[
-                    Image.asset(item, fit: BoxFit.fill, width: 1000.0),
-                    Positioned(
-                      bottom: 0.0,
-                      left: 0.0,
-                      right: 0.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(200, 0, 0, 0),
-                              Color.fromARGB(0, 0, 0, 0)
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-          ),
-        ))
-    .toList();
+List<String> imgList3 = [
+  'assets/Gallery/Yellow/22.png',
+  'assets/Gallery/Yellow/20-21.png',
+];
+
+List<String> imgList4 = [
+  'assets/Gallery/Yellow/49.png',
+  'assets/Gallery/Yellow/48.png',
+  'assets/Gallery/Yellow/43-44.jpg',
+];
+
+List<String> imgList5 = [
+  'assets/Gallery/Yellow/66.png',
+  'assets/Gallery/Yellow/62-64.png',
+  'assets/Gallery/Yellow/61.png',
+];
+
+List<String> imgList6 = [
+  'assets/Gallery/Yellow/80.png',
+  'assets/Gallery/Yellow/77.png',
+  'assets/Gallery/Yellow/74-75.png',
+  'assets/Gallery/Yellow/73.png',
+  'assets/Gallery/Yellow/70.png',
+  'assets/Gallery/Yellow/68-70.png',
+  'assets/Gallery/Yellow/67.png',
+];
+
+List<String> imgList7 = [
+  'assets/Gallery/Yellow/96-97.png',
+  'assets/Gallery/Yellow/94_99.png',
+  'assets/Gallery/Yellow/92-93.png',
+  'assets/Gallery/Yellow/56-58_99-101.png',
+];
+
+List<String> imgList = [];
 
 class YellowThreeDMap extends StatefulWidget {
   const YellowThreeDMap({Key? key}) : super(key: key);
@@ -98,6 +77,42 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
 
   int hotspotId = 1;
 
+  List<Widget> imageSliders = [];
+  void refreshImageSliders(List<String> ImageList) {
+    setState(() {
+      imageSliders = ImageList.map((item) => Container(
+            child: Container(
+              margin: EdgeInsets.all(5.0),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: <Widget>[
+                      Image.asset(item, fit: BoxFit.fill, width: 1000.0),
+                      Positioned(
+                        bottom: 0.0,
+                        left: 0.0,
+                        right: 0.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(200, 0, 0, 0),
+                                Color.fromARGB(0, 0, 0, 0)
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+            ),
+          )).toList();
+    });
+  }
+
   void resetCache() {
     Timer.periodic(const Duration(milliseconds: 30000), (timer) async {
       PaintingBinding.instance.imageCache.clear();
@@ -114,6 +129,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
 
   @override
   void initState() {
+    refreshImageSliders(imgList1);
     resetCache();
     hotspot1 = [
       Hotspot(
@@ -126,6 +142,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList3);
               setState(() {
                 assetPath = "assets/Yellow/3.webp";
                 hotspotId = 3;
@@ -150,6 +167,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList2);
               setState(() {
                 assetPath = "assets/Yellow/2.webp";
                 hotspotId = 2;
@@ -177,6 +195,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList1);
               setState(() {
                 assetPath = "assets/Yellow/1.webp";
                 hotspotId = 1;
@@ -204,6 +223,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList1);
               setState(() {
                 assetPath = "assets/Yellow/1.webp";
                 hotspotId = 1;
@@ -228,6 +248,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList4);
               setState(() {
                 assetPath = "assets/Yellow/4.webp";
                 hotspotId = 4;
@@ -255,6 +276,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList3);
               setState(() {
                 assetPath = "assets/Yellow/3.webp";
                 hotspotId = 3;
@@ -279,6 +301,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList5);
               setState(() {
                 assetPath = "assets/Yellow/5.webp";
                 hotspotId = 5;
@@ -306,6 +329,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList4);
               setState(() {
                 assetPath = "assets/Yellow/4.webp";
                 hotspotId = 4;
@@ -330,6 +354,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList6);
               setState(() {
                 assetPath = "assets/Yellow/6.webp";
                 hotspotId = 6;
@@ -357,6 +382,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList7);
               setState(() {
                 assetPath = "assets/Yellow/7.webp";
                 hotspotId = 7;
@@ -381,6 +407,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList5);
               setState(() {
                 assetPath = "assets/Yellow/5.webp";
                 hotspotId = 5;
@@ -408,6 +435,7 @@ class _YellowThreeDMapState extends State<YellowThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList6);
               setState(() {
                 assetPath = "assets/Yellow/6.webp";
                 hotspotId = 6;

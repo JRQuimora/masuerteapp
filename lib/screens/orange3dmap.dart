@@ -6,65 +6,99 @@ import 'package:avatar_glow/avatar_glow.dart';
 import 'dart:async';
 import 'package:carousel_slider/carousel_slider.dart';
 
-final List<String> imgList = [
-  'assets/Gallery/Orange/1.PNG',
-  'assets/Gallery/Orange/2.PNG',
-  'assets/Gallery/Orange/3.PNG',
-  'assets/Gallery/Orange/4.PNG',
-  'assets/Gallery/Orange/5.PNG',
-  'assets/Gallery/Orange/6.PNG',
-  'assets/Gallery/Orange/7.PNG',
-  'assets/Gallery/Orange/8.PNG',
-  'assets/Gallery/Orange/9.PNG',
-  'assets/Gallery/Orange/10.PNG',
-  'assets/Gallery/Orange/11.PNG',
-  'assets/Gallery/Orange/12.PNG',
-  'assets/Gallery/Orange/13.PNG',
-  'assets/Gallery/Orange/14.PNG',
-  'assets/Gallery/Orange/15.PNG',
-  'assets/Gallery/Orange/16.PNG',
-  'assets/Gallery/Orange/17.PNG',
-  'assets/Gallery/Orange/18.PNG',
-  'assets/Gallery/Orange/19.PNG',
-  'assets/Gallery/Orange/20.PNG',
-  'assets/Gallery/Orange/21.PNG',
-  'assets/Gallery/Orange/22.PNG',
-  'assets/Gallery/Orange/23.PNG',
-  'assets/Gallery/Orange/24.PNG',
+List<String> imgList1 = [
+  'assets/Gallery/Orange/1-5.jpg',
 ];
 
-final List<Widget> imageSliders = imgList
-    .map((item) => Container(
-          child: Container(
-            margin: EdgeInsets.all(5.0),
-            child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                child: Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: <Widget>[
-                    Image.asset(item, fit: BoxFit.fill, width: 1000.0),
-                    Positioned(
-                      bottom: 0.0,
-                      left: 0.0,
-                      right: 0.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              Color.fromARGB(200, 0, 0, 0),
-                              Color.fromARGB(0, 0, 0, 0)
-                            ],
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-          ),
-        ))
-    .toList();
+List<String> imgList2 = [
+  'assets/Gallery/Orange/19-20.png',
+  'assets/Gallery/Orange/14_24.png',
+  'assets/Gallery/Orange/24_14.png',
+  'assets/Gallery/Orange/25.png',
+  'assets/Gallery/Orange/26.png',
+];
+
+List<String> imgList3 = [
+  'assets/Gallery/Orange/31-34.png',
+  'assets/Gallery/Orange/48-50.png',
+];
+
+List<String> imgList4 = [
+  'assets/Gallery/Orange/56.png',
+  'assets/Gallery/Orange/57.png',
+  'assets/Gallery/Orange/71.png',
+  'assets/Gallery/Orange/72.png',
+  'assets/Gallery/Orange/73.png',
+];
+
+List<String> imgList5 = [
+  'assets/Gallery/Orange/79-80.png',
+  'assets/Gallery/Orange/95.png',
+];
+
+List<String> imgList6 = [
+  'assets/Gallery/Orange/120.png',
+  'assets/Gallery/Orange/121-122.png',
+];
+
+List<String> imgList7 = [
+  'assets/Gallery/Orange/127-128.png',
+  'assets/Gallery/Orange/129.png',
+];
+
+List<String> imgList8 = [
+  'assets/Gallery/Orange/150-151.png',
+  'assets/Gallery/Orange/152.png',
+  'assets/Gallery/Orange/154.png',
+  'assets/Gallery/Orange/166.png',
+  'assets/Gallery/Orange/169.png',
+];
+
+List<String> imgList9 = [
+  'assets/Gallery/Orange/174-176.png',
+];
+
+List<String> imgList10 = [
+  'assets/Gallery/Orange/185-188.png',
+  'assets/Gallery/Orange/189.png',
+];
+
+List<String> imgList11 = [
+  'assets/Gallery/Orange/41_162-163.png',
+  'assets/Gallery/Orange/166.png',
+];
+
+List<String> imgList12 = [
+  'assets/Gallery/Orange/131-132.png',
+  'assets/Gallery/Orange/137-139.png',
+];
+
+List<String> imgList13 = [
+  'assets/Gallery/Orange/107-108.png',
+  'assets/Gallery/Orange/109.png',
+];
+
+List<String> imgList14 = [
+  'assets/Gallery/Orange/86-87.png',
+];
+
+List<String> imgList15 = [
+  'assets/Gallery/Orange/61.png',
+  'assets/Gallery/Orange/62-63.png',
+];
+
+List<String> imgList16 = [
+  'assets/Gallery/Orange/36-37.png',
+  'assets/Gallery/Orange/38-40_44.png',
+];
+
+List<String> imgList17 = [
+  'assets/Gallery/Orange/41_162-163.png',
+  'assets/Gallery/Orange/42.png',
+  'assets/Gallery/Orange/38-40_44.png',
+];
+
+List<String> imgList = [];
 
 class OrangeThreeDMap extends StatefulWidget {
   const OrangeThreeDMap({Key? key}) : super(key: key);
@@ -101,6 +135,42 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
   double maxLong = 50;
   Rect croppedArea = const Rect.fromLTWH(0.2, 0.2, 0.5, 0.5);
 
+  List<Widget> imageSliders = [];
+  void refreshImageSliders(List<String> ImageList) {
+    setState(() {
+      imageSliders = ImageList.map((item) => Container(
+            child: Container(
+              margin: EdgeInsets.all(5.0),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: <Widget>[
+                      Image.asset(item, fit: BoxFit.fill, width: 1000.0),
+                      Positioned(
+                        bottom: 0.0,
+                        left: 0.0,
+                        right: 0.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(200, 0, 0, 0),
+                                Color.fromARGB(0, 0, 0, 0)
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+            ),
+          )).toList();
+    });
+  }
+
   void resetCache() {
     Timer.periodic(const Duration(milliseconds: 30000), (timer) async {
       PaintingBinding.instance.imageCache.clear();
@@ -110,6 +180,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
 
   @override
   void initState() {
+    refreshImageSliders(imgList1);
     resetCache();
     hotspot1 = [
       Hotspot(
@@ -122,6 +193,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList2);
               setState(() {
                 assetPath = "assets/Orange/2.webp";
                 hotspotId = 2;
@@ -152,6 +224,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList1);
               setState(() {
                 assetPath = "assets/Orange/1.webp";
                 hotspotId = 1;
@@ -181,6 +254,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList17);
               setState(() {
                 assetPath = "assets/Orange/17.webp";
                 hotspotId = 17;
@@ -208,6 +282,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList3);
               setState(() {
                 assetPath = "assets/Orange/3.webp";
                 hotspotId = 3;
@@ -235,6 +310,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList2);
               setState(() {
                 assetPath = "assets/Orange/2.webp";
                 hotspotId = 2;
@@ -259,6 +335,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList4);
               setState(() {
                 assetPath = "assets/Orange/4.webp";
                 hotspotId = 4;
@@ -286,6 +363,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList3);
               setState(() {
                 assetPath = "assets/Orange/3.webp";
                 hotspotId = 3;
@@ -310,6 +388,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList17);
               setState(() {
                 assetPath = "assets/Orange/17.webp";
                 hotspotId = 17;
@@ -337,6 +416,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList5);
               setState(() {
                 assetPath = "assets/Orange/5.webp";
                 hotspotId = 5;
@@ -370,6 +450,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList4);
               setState(() {
                 assetPath = "assets/Orange/4.webp";
                 hotspotId = 4;
@@ -397,6 +478,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList16);
               setState(() {
                 assetPath = "assets/Orange/16.webp";
                 hotspotId = 16;
@@ -424,6 +506,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList6);
               setState(() {
                 assetPath = "assets/Orange/6.webp";
                 hotspotId = 6;
@@ -451,6 +534,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList5);
               setState(() {
                 assetPath = "assets/Orange/5.webp";
                 hotspotId = 5;
@@ -475,6 +559,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList15);
               setState(() {
                 assetPath = "assets/Orange/15.webp";
                 hotspotId = 15;
@@ -502,6 +587,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList7);
               setState(() {
                 assetPath = "assets/Orange/7.webp";
                 hotspotId = 7;
@@ -529,6 +615,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList6);
               setState(() {
                 assetPath = "assets/Orange/6.webp";
                 hotspotId = 6;
@@ -553,6 +640,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList14);
               setState(() {
                 assetPath = "assets/Orange/14.webp";
                 hotspotId = 14;
@@ -580,6 +668,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList8);
               setState(() {
                 assetPath = "assets/Orange/8.webp";
                 hotspotId = 8;
@@ -607,6 +696,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList7);
               setState(() {
                 assetPath = "assets/Orange/7.webp";
                 hotspotId = 7;
@@ -631,6 +721,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList13);
               setState(() {
                 assetPath = "assets/Orange/13.webp";
                 hotspotId = 13;
@@ -658,6 +749,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList9);
               setState(() {
                 assetPath = "assets/Orange/9.webp";
                 hotspotId = 9;
@@ -685,6 +777,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList8);
               setState(() {
                 assetPath = "assets/Orange/8.webp";
                 hotspotId = 8;
@@ -709,6 +802,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList12);
               setState(() {
                 assetPath = "assets/Orange/12.webp";
                 hotspotId = 12;
@@ -736,6 +830,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList10);
               setState(() {
                 assetPath = "assets/Orange/10.webp";
                 hotspotId = 10;
@@ -763,6 +858,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList9);
               setState(() {
                 assetPath = "assets/Orange/9.webp";
                 hotspotId = 9;
@@ -787,6 +883,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList11);
               setState(() {
                 assetPath = "assets/Orange/11.webp";
                 hotspotId = 11;
@@ -814,6 +911,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList10);
               setState(() {
                 assetPath = "assets/Orange/10.webp";
                 hotspotId = 10;
@@ -838,6 +936,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList12);
               setState(() {
                 assetPath = "assets/Orange/12.webp";
                 hotspotId = 12;
@@ -868,6 +967,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList11);
               setState(() {
                 assetPath = "assets/Orange/11.webp";
                 hotspotId = 11;
@@ -897,6 +997,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList13);
               setState(() {
                 assetPath = "assets/Orange/13.webp";
                 hotspotId = 13;
@@ -921,6 +1022,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList9);
               setState(() {
                 assetPath = "assets/Orange/9.webp";
                 hotspotId = 9;
@@ -948,6 +1050,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList12);
               setState(() {
                 assetPath = "assets/Orange/12.webp";
                 hotspotId = 12;
@@ -972,6 +1075,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList14);
               setState(() {
                 assetPath = "assets/Orange/14.webp";
                 hotspotId = 14;
@@ -996,6 +1100,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList8);
               setState(() {
                 assetPath = "assets/Orange/8.webp";
                 hotspotId = 8;
@@ -1028,6 +1133,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList13);
               setState(() {
                 assetPath = "assets/Orange/13.webp";
                 hotspotId = 13;
@@ -1052,6 +1158,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList15);
               setState(() {
                 assetPath = "assets/Orange/15.webp";
                 hotspotId = 15;
@@ -1076,6 +1183,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList7);
               setState(() {
                 assetPath = "assets/Orange/7.webp";
                 hotspotId = 7;
@@ -1108,6 +1216,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList14);
               setState(() {
                 assetPath = "assets/Orange/14.webp";
                 hotspotId = 14;
@@ -1132,6 +1241,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList16);
               setState(() {
                 assetPath = "assets/Orange/16.webp";
                 hotspotId = 16;
@@ -1156,6 +1266,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList6);
               setState(() {
                 assetPath = "assets/Orange/6.webp";
                 hotspotId = 6;
@@ -1188,6 +1299,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList15);
               setState(() {
                 assetPath = "assets/Orange/15.webp";
                 hotspotId = 15;
@@ -1212,6 +1324,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList17);
               setState(() {
                 assetPath = "assets/Orange/17.webp";
                 hotspotId = 17;
@@ -1236,6 +1349,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList5);
               setState(() {
                 assetPath = "assets/Orange/5.webp";
                 hotspotId = 5;
@@ -1268,6 +1382,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList16);
               setState(() {
                 assetPath = "assets/Orange/16.webp";
                 hotspotId = 16;
@@ -1292,6 +1407,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList2);
               setState(() {
                 assetPath = "assets/Orange/2.webp";
                 hotspotId = 2;
@@ -1316,6 +1432,7 @@ class _OrangeThreeDMapState extends State<OrangeThreeDMap> {
           duration: const Duration(milliseconds: 1000),
           child: IconButton(
             onPressed: () {
+              refreshImageSliders(imgList4);
               setState(() {
                 assetPath = "assets/Orange/4.webp";
                 hotspotId = 4;
